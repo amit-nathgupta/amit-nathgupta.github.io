@@ -115,7 +115,7 @@ section{padding:84px 0 0;scroll-margin-top:60px}
 .video-card video{width:100%;aspect-ratio:16/9;background:#000}
 .video-card .cap{padding:14px 18px;color:#c3d0d9;font-size:14px}
 .video-card .cap b{color:#fff}
-.strip{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:20px}
+.strip{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:20px}
 .strip figure{margin:0}
 .strip img{border-radius:10px;aspect-ratio:4/3;object-fit:cover;width:100%;border:1px solid var(--line);cursor:zoom-in}
 .strip figcaption{font-family:var(--mono);font-size:11.5px;color:var(--muted);margin-top:6px;text-align:center}
@@ -213,7 +213,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
   .portrait .ring{width:170px}
   .stats{grid-template-columns:1fr 1fr}
   .two,.projects,.skills,.certs,.sam-grid,.gallery{grid-template-columns:1fr}
-  .strip{grid-template-columns:repeat(3,1fr)}
+  .strip{grid-template-columns:repeat(2,1fr)}
   .dark-band{padding:22px 16px}
   .contact{grid-template-columns:1fr;padding:30px 22px}
   .contact .btns{justify-content:flex-start}
@@ -243,6 +243,38 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
   .sec-head{break-after:avoid}
   .contact{break-inside:avoid}
 }
+
+/* samsung showcase v4 */
+.sam-top{display:grid;grid-template-columns:.92fr 1.08fr;gap:30px;background:linear-gradient(135deg,#0b1f2e 0%,#12324a 100%);border-radius:24px;padding:32px;color:#d7e2e9;position:relative;overflow:hidden}
+.sam-top::after{content:"";position:absolute;right:-90px;top:-90px;width:280px;height:280px;border-radius:50%;background:radial-gradient(circle,rgba(53,208,186,.18),transparent 70%);pointer-events:none}
+.sam-top h3{color:#fff;font-size:18px;margin-bottom:16px}
+.tline{list-style:none;margin:0;padding:0 0 0 20px;border-left:2px solid rgba(53,208,186,.35)}
+.tline li{position:relative;margin:0 0 18px;padding-left:4px}
+.tline li:last-child{margin-bottom:0}
+.tline li::before{content:"";position:absolute;left:-28px;top:4px;width:12px;height:12px;border-radius:50%;background:#0b1f2e;border:2px solid var(--accent-2)}
+.tline .d{font-family:var(--mono);font-size:12px;color:var(--accent-2);display:block}
+.tline b{color:#fff;font-weight:600}
+.tline .t{display:block;font-size:14px;color:#b8c7d1;margin-top:2px}
+.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;align-content:start}
+.kpi{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:16px}
+.kpi b{display:block;font-family:"Space Grotesk",Inter,sans-serif;font-size:30px;color:#fff;line-height:1.1}
+.kpi b em{font-style:normal;color:var(--accent-2)}
+.kpi span{font-size:13px;color:#b0c0cb;display:block;margin-top:6px;line-height:1.4}
+.sub-h{font-family:"Space Grotesk",Inter,sans-serif;font-size:20px;color:var(--ink);margin:40px 0 16px;display:flex;align-items:center;gap:12px}
+.sub-h::after{content:"";flex:1;height:1px;background:var(--line)}
+.phases{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:20px}
+.phase{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px 24px;box-shadow:var(--shadow);border-top:4px solid var(--accent)}
+.phase.post{border-top-color:var(--warm)}
+.phase h3{font-size:17px;margin-bottom:2px}
+.phase .dur{font-size:13.5px;color:var(--muted);margin-bottom:8px;display:block}
+.phase ul{margin:6px 0 0;padding-left:18px;font-size:15px;color:#3a4955}
+.phase li{margin:4px 0}
+.tools{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.chip-wall{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.chip-wall h4{font-size:13px;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);margin:14px 0 8px;font-family:Inter,sans-serif}
+.chip-wall h4:first-of-type{margin-top:4px}
+@media (max-width:980px){.sam-top{grid-template-columns:1fr}}
+@media (max-width:760px){.sam-top{padding:22px 16px}.kpis{grid-template-columns:1fr 1fr}.kpi b{font-size:24px}.phases,.tools,.chip-wall{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -254,9 +286,9 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
     <ul id="menu">
       <li><a class="link" href="#about">About</a></li>
       <li><a class="link" href="#projects">Projects</a></li>
+      <li><a class="link" href="#samsung">Samsung</a></li>
       <li><a class="link" href="#lab">SLAM lab</a></li>
       <li><a class="link" href="#skills">Skills</a></li>
-      <li><a class="link" href="#samsung">Industry</a></li>
       <li><a class="link" href="#publications">Publications</a></li>
       <li><a class="link" href="#cpd">CPD</a></li>
       <li><a class="link" href="#contact">Contact</a></li>
@@ -342,8 +374,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
         <div class="body">
           <span class="meta">IIT Delhi · Mar–Sep 2025</span>
           <h3>SLAM with a TortoiseBot</h3>
-          <p>Built the robot from parts and got mapping and autonomous navigation working in ROS&nbsp;2, including fixing the LiDAR "ghost points" bug shown in the video below.</p>
-          <div class="tags"><span class="tag">ROS 2</span><span class="tag">Nav2</span><span class="tag">Cartographer</span><span class="tag">LiDAR</span></div>
+          <p>Built the robot from parts and got mapping and autonomous navigation working in ROS, including fixing the LiDAR "ghost points" bug shown in the video below.</p>
+          <div class="tags"><span class="tag">ROS</span><span class="tag">Navigation</span><span class="tag">Cartographer</span><span class="tag">LiDAR</span></div>
           <a class="more" href="#lab">See the lab ↓</a>
         </div>
       </article>
@@ -381,6 +413,137 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
         </div>
       </article>
 
+    </div>
+  </section>
+
+  <!-- SAMSUNG -->
+  <section id="samsung">
+    <div class="sec-head"><div class="row"><span class="num">03</span><h2>Samsung R&amp;D: four years shipping Smart TV firmware</h2></div>
+      <p>Software Engineer, TV Product Group, Samsung R&amp;D Institute India – Delhi (Noida). Premium Smart TVs run Tizen, an embedded Linux OS, and ship to ATSC, DVB and ISDB broadcast regions. Samsung HQ in Korea set the projects; our Delhi team did the ground-level execution.</p>
+    </div>
+
+    <div class="sam-top">
+      <div>
+        <h3>My path at Samsung</h3>
+        <ol class="tline">
+          <li><span class="d">Jan 2022</span><b>Software Intern</b><span class="t">Web tools for developers; checked fixes by flashing RPM packages onto debug images.</span></li>
+          <li><span class="d">Jul 2022</span><b>Software Engineer, TV Product Group</b><span class="t">Release and hotfix engineering, sanitizer and memory passes, test automation.</span></li>
+          <li><span class="d">Growing scope</span><b>Ran full releases on my own</b><span class="t">A Black Friday launch and a China-market release; led three interns on my automation tool.</span></li>
+          <li><span class="d">Aug 2026</span><b>Left to study robotics</b><span class="t">MSc Robotics with Extended Research, The University of Manchester.</span></li>
+        </ol>
+      </div>
+      <div class="kpis" aria-label="Samsung in numbers">
+        <div class="kpi"><b>350<em>+</em></b><span>fixes integrated into release images</span></div>
+        <div class="kpi"><b>95<em>%</em></b><span>of releases within target schedule</span></div>
+        <div class="kpi"><b>5</b><span>chipsets across ATSC, DVB and ISDB regions</span></div>
+        <div class="kpi"><b>48–60</b><span>factory firmware sets per cycle, uploaded overnight by my tool</span></div>
+        <div class="kpi"><b>24</b><span>projects assigned to me in one product kickoff</span></div>
+        <div class="kpi"><b>4</b><span>interns mentored</span></div>
+      </div>
+    </div>
+
+    <h3 class="sub-h">A year in TV firmware</h3>
+    <div class="dark-band">
+      <svg class="pipeline" viewBox="0 0 1060 170" role="img" aria-label="Firmware lifecycle: feature kickoff, private image check, sanitizer and memory passes, regression and long-run tests, hotfix integration, factory release, updates over the network">
+        <defs><marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#35d0ba"/></marker></defs>
+        <g font-family="Inter,Arial" text-anchor="middle">
+          <g transform="translate(10 40)"><rect width="128" height="70" rx="12" fill="#132f44" stroke="#2a5068"/><text x="64" y="30" fill="#fff" font-size="13" font-weight="600">Feature</text><text x="64" y="48" fill="#fff" font-size="13" font-weight="600">kickoff</text><text x="64" y="64" fill="#93a6b4" font-size="11">200–300 features</text></g>
+          <g transform="translate(160 40)"><rect width="128" height="70" rx="12" fill="#132f44" stroke="#2a5068"/><text x="64" y="30" fill="#fff" font-size="13" font-weight="600">Private image</text><text x="64" y="48" fill="#fff" font-size="13" font-weight="600">check</text><text x="64" y="64" fill="#93a6b4" font-size="11">every fix, on a TV</text></g>
+          <g transform="translate(310 40)"><rect width="128" height="70" rx="12" fill="#0f3b3a" stroke="#35d0ba"/><text x="64" y="30" fill="#fff" font-size="13" font-weight="600">Sanitizer &amp;</text><text x="64" y="48" fill="#fff" font-size="13" font-weight="600">memory passes</text><text x="64" y="64" fill="#7fe3d3" font-size="11">KASAN · ASan</text></g>
+          <g transform="translate(460 40)"><rect width="128" height="70" rx="12" fill="#132f44" stroke="#2a5068"/><text x="64" y="30" fill="#fff" font-size="13" font-weight="600">Regression &amp;</text><text x="64" y="48" fill="#fff" font-size="13" font-weight="600">long-run tests</text><text x="64" y="64" fill="#93a6b4" font-size="11">deadlocks · timing</text></g>
+          <g transform="translate(610 40)"><rect width="128" height="70" rx="12" fill="#0f3b3a" stroke="#35d0ba"/><text x="64" y="30" fill="#fff" font-size="13" font-weight="600">Hotfix</text><text x="64" y="48" fill="#fff" font-size="13" font-weight="600">integration</text><text x="64" y="64" fill="#7fe3d3" font-size="11">Perforce changelists</text></g>
+          <g transform="translate(760 40)"><rect width="128" height="70" rx="12" fill="#0f3b3a" stroke="#35d0ba"/><text x="64" y="30" fill="#fff" font-size="13" font-weight="600">Factory</text><text x="64" y="48" fill="#fff" font-size="13" font-weight="600">release</text><text x="64" y="64" fill="#7fe3d3" font-size="11">5k–10k TVs per batch</text></g>
+          <g transform="translate(910 40)"><rect width="140" height="70" rx="12" fill="#132f44" stroke="#2a5068"/><text x="70" y="30" fill="#fff" font-size="13" font-weight="600">Updates to TVs</text><text x="70" y="48" fill="#fff" font-size="13" font-weight="600">in homes</text><text x="70" y="64" fill="#93a6b4" font-size="11">over-the-network</text></g>
+        </g>
+        <g stroke="#35d0ba" stroke-width="2" fill="none" class="flow">
+          <path d="M138 75H156" marker-end="url(#ar)"/><path d="M288 75H306" marker-end="url(#ar)"/><path d="M438 75H456" marker-end="url(#ar)"/><path d="M588 75H606" marker-end="url(#ar)"/><path d="M738 75H756" marker-end="url(#ar)"/><path d="M888 75H906" marker-end="url(#ar)"/>
+        </g>
+        <path d="M980 112 V140 H224 V114" fill="none" stroke="#f2a541" stroke-width="1.5" stroke-dasharray="4 5" marker-end="url(#ar)"/>
+        <text x="600" y="160" fill="#f2a541" font-family="Inter,Arial" font-size="11" text-anchor="middle">post-market rounds: the released image becomes the base for the next fixes</text>
+        <text x="10" y="22" fill="#93a6b4" font-family="Inter,Arial" font-size="11">Teal boxes = where I spent most of my time</text>
+      </svg>
+    </div>
+    <div class="phases">
+      <div class="phase">
+        <h3>Commercialisation</h3><span class="dur">About 4 months · getting new models ready for the factory</span>
+        <ul>
+          <li>HQ kickoff with 200–300 new features; in one kickoff 24 were assigned to me, each tested on its own private image.</li>
+          <li>About 1.5 months of product validation, with test and regression rounds across hardware and software.</li>
+          <li>Near the deadline, full builds give way to hotfixes; final images go to the factory for batches of 5,000–10,000 TVs.</li>
+        </ul>
+      </div>
+      <div class="phase post">
+        <h3>Post-market updates</h3><span class="dur">About 8 months · improving TVs already in people's homes</span>
+        <ul>
+          <li>The factory image becomes the base; fixes and features reach TVs over the network in rounds of about 1.5 months.</li>
+          <li>Regression testing on every new build, plus field testing in five regions.</li>
+          <li>Change requests from HQ explained to QA testers, so they could write and run test cases.</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 class="sub-h">What I did</h3>
+    <div class="sam-grid">
+      <div class="panel">
+        <h3><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6v6H9zM9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 14h3M1 9h3M1 14h3"/></svg></span>Kernel &amp; memory debugging</h3>
+        <ol>
+          <li>Flash a KASAN / AddressSanitizer image onto the TV or EVK board (it runs very slowly).</li>
+          <li>Drive real actions: HDMI plug and unplug, volume, app launches like Netflix.</li>
+          <li>Watch kernel logs for "tainted" and error reports, and capture logs at the moment of failure.</li>
+          <li>Match each report to the physical action that caused it, then raise a defect with logs for the developer.</li>
+        </ol>
+        <div class="kv"><span>heap-use-after-free</span><span>buffer overflow</span><span>memory leak</span><span>core dump</span></div>
+        <p class="honest">On TV firmware, I ran the sanitizer images and triaged from the logs; the developers wrote the code fixes. The tools I wrote myself are under <a href="#tools">Tools I built</a>.</p>
+      </div>
+      <div class="panel">
+        <h3><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg></span>Memory &amp; performance</h3>
+        <ul>
+          <li>Memory profiling of each binary before a market release, hunting leaks, crashes and deadlocks through crash dumps and call stacks.</li>
+          <li>Package-dependency analysis on the display Linux package to cut memory use on low-RAM models.</li>
+          <li>Worked on a daemon that watches CPU, flash and RAM use of every process and cleans up on excessive use.</li>
+          <li>Boot-time and responsiveness defects measured per process in milliseconds against spec, and the trade-off between richer animations and boot time on a 4-core CPU.</li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h3><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="6" cy="6" r="2"/><circle cx="6" cy="18" r="2"/><circle cx="18" cy="12" r="2"/><path d="M6 8v8M8 6h4a4 4 0 0 1 4 4v0M8 18h4a4 4 0 0 0 4-4"/></svg></span>Release &amp; hotfix engineering</h3>
+        <ul>
+          <li>Built full and hotfix firmware images in Perforce Helix and cherry-picked changelists into release images.</li>
+          <li>Triaged defects by severity and component, and checked fixes on a private image on a real TV before accepting them.</li>
+          <li>For risky fixes, built two images, one with the fix and one without, and shipped only once the side effect was ruled out.</li>
+          <li><b>350+ fixes across 5 chipsets, 95% within target schedule.</b></li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h3><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 2 3h10a2 2 0 0 0 2-3l-5-9V3"/></svg></span>Test infrastructure</h3>
+        <ul>
+          <li>Long-run suites that simulate real use and catch CPU deadlocks, on a remote multi-device testbed for many TVs at once.</li>
+          <li>Long user paths scripted as command sequences (Netflix → YouTube → HDMI → volume → SmartThings), not pressed by hand on a remote.</li>
+          <li>Python tools over serial: factory-key checks before mass production, changelist tracking from firmware XML, hotfix data validation.</li>
+          <li>Anomaly checks comparing real user scenarios with ideal runs, to flag operating-time and user-experience regressions.</li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h3><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></span>Coordination &amp; risk</h3>
+        <ul>
+          <li>Main link between the Delhi product team and QA, and between Delhi and Samsung HQ in Korea.</li>
+          <li>Coordinated field testers in America, Poland, Korea, Chennai and Europe.</li>
+          <li>Negotiated test-round counts and which fixes moved to a later round, and planned around Diwali and Chuseok.</li>
+          <li>Justified test-unit allocation, and managed schedule dependencies on third-party apps such as Netflix.</li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h3><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="10" r="2.5"/><path d="M3 20c0-3 3-5 6-5s6 2 6 5M14 20c0-2 1.5-3.5 3.5-3.5S21 18 21 20"/></svg></span>Mentoring</h3>
+        <ul>
+          <li>Mentored 4 interns on memory profiling, leak detection and sanitizer images.</li>
+          <li>Led three of them on my automation tool: work tracked on Jira, code reviewed, React front-end built on my Python code.</li>
+          <li>Trained one from scratch on a commercialisation project: serial logs, image types, regions, and how to raise a defect.</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 class="sub-h" id="tools">Tools I built</h3>
+    <div class="tools">
+
       <article class="proj">
         <div class="art" aria-hidden="true">
           <svg viewBox="0 0 320 200">
@@ -402,10 +565,10 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
           </svg>
         </div>
         <div class="body">
-          <span class="meta">Samsung R&amp;D · Python</span>
+          <span class="meta">Built by me · Python</span>
           <h3>Factory firmware registration automation</h3>
           <p>Each firmware set (12–26&nbsp;GB) had to be registered by hand for the factory: about 20–25 minutes each, 6–7 per engineer, and one mistake could put a factory batch of 5,000–10,000 TVs at risk. I built an OCR + OpenCV + PyAutoGUI uploader that runs unattended overnight, plus a separate checker that compares each image with the repository copy by checksum.</p>
-          <p>It was adopted across the TV Product Group and caught colleagues' errors before they reached the factory. I later led three interns who added a React front-end.</p>
+          <p>The idea and the checksum check came from my director; I designed and built both tools in Python over about two months. It turned a four-person, two-hour job into a one-person job, was adopted across the TV Product Group, and caught colleagues' errors before they reached the factory. I later led three interns who added a React front-end.</p>
           <div class="tags"><span class="tag">Python</span><span class="tag">OpenCV</span><span class="tag">OCR</span><span class="tag">PyAutoGUI</span><span class="tag">Checksums</span></div>
         </div>
       </article>
@@ -423,20 +586,60 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
           </svg>
         </div>
         <div class="body">
-          <span class="meta">Samsung R&amp;D · Java</span>
+          <span class="meta">Built by me · Java</span>
           <h3>Defect-tracker bulk creator</h3>
           <p>One fix often touches many files across a package, and each needed its own linked "child" record. The stock tool took about 45 seconds per record and crashed after 10–15. I built a Java client on APIs supplied by Samsung HQ that creates 40–200 linked records in seconds, with project, date and developer filled in automatically.</p>
           <div class="tags"><span class="tag">Java</span><span class="tag">API integration</span><span class="tag">Release tooling</span></div>
         </div>
       </article>
+    </div>
 
+    <h3 class="sub-h">Moments I'm proud of</h3>
+    <div class="stories">
+      <article class="story">
+        <span class="tag">Ownership</span>
+        <h3>A Black Friday launch, single-handed</h3>
+        <p>A premium North American model for the Black Friday sale. Product validation and release usually takes 3–4 engineers; I ran it on my own: QA meetings, sanitizer and memory passes, and holiday-risk planning.</p>
+        <p>After the October holidays, critical boot-time and UI-performance defects were still open and beyond my authority. I took them to the HQ product manager, so HQ QA could decide whether to change the spec or accept them.</p>
+        <div class="result">Shipped on time for Black Friday.</div>
+      </article>
+      <article class="story">
+        <span class="tag">Attention to detail</span>
+        <h3>The last-day catch</h3>
+        <p>On the final factory-image day, a developer's build had the right changes but used an outdated configuration data file. I spotted it from the file name as soon as the file appeared.</p>
+        <p>The fix landed in about 2 hours and I rebuilt the factory images in the next 2–3. I opened a group chat with HQ to find the root cause: one wrong file name in one section.</p>
+        <div class="result">The wrong file never reached the factory, and the deadline held.</div>
+      </article>
+      <article class="story">
+        <span class="tag">Judgement</span>
+        <h3>A China-market release, start to finish</h3>
+        <p>A 5–6 week release for an Android-on-Tizen chipset for the Chinese market. I set up the project, drove the QA meetings and decided with developers which changelists belonged in the build.</p>
+        <p>Many changes were shared across chipsets. I kept out a home-screen UI fix that was correct elsewhere but wrong for the different Chinese UI.</p>
+        <div class="result">Hit the factory date, so mass production started on time.</div>
+      </article>
+    </div>
+
+    <h3 class="sub-h">What I worked with</h3>
+    <div class="chip-wall">
+      <div class="panel">
+        <h4>TV features I tested</h4>
+        <div class="chips"><span class="chip">Dolby Vision</span><span class="chip">ARC</span><span class="chip">CEC</span><span class="chip">Local dimming</span><span class="chip">Global dimming</span><span class="chip">Audio &amp; video codecs</span><span class="chip">OTT apps (Netflix, YouTube)</span><span class="chip">SmartThings</span><span class="chip">Software upgrade</span></div>
+        <h4>Devices I checked compatibility with</h4>
+        <div class="chips"><span class="chip">AV receivers</span><span class="chip">Set-top boxes</span><span class="chip">Soundbars &amp; wireless speakers</span><span class="chip">Blu-ray &amp; DVD players</span><span class="chip">Apple TV</span><span class="chip">Fire TV Stick</span><span class="chip">Chromecast</span><span class="chip">Xbox</span></div>
+      </div>
+      <div class="panel">
+        <h4>Toolbox</h4>
+        <div class="chips"><span class="chip">Tizen (embedded Linux)</span><span class="chip">KASAN</span><span class="chip">AddressSanitizer</span><span class="chip">Memory profiling</span><span class="chip">Perforce Helix</span><span class="chip">Serial &amp; HyperUART logs</span><span class="chip">Python (pyserial, regex, multithreading)</span><span class="chip">Java</span><span class="chip">JavaScript</span><span class="chip">React</span><span class="chip">Jira</span><span class="chip">Confluence</span><span class="chip">Internal defect tracker</span><span class="chip">Remote multi-device testbed</span></div>
+        <h4>How I worked</h4>
+        <div class="chips"><span class="chip">Defect triage by severity</span><span class="chip">Root cause analysis</span><span class="chip">Release risk planning</span><span class="chip">QA negotiation</span><span class="chip">Clear escalation</span></div>
+      </div>
     </div>
   </section>
 
   <!-- SLAM LAB -->
   <section id="lab">
-    <div class="sec-head"><div class="row"><span class="num">03</span><h2>SLAM lab: TortoiseBot</h2></div>
-      <p>IIT Delhi Executive Programme in Robotics, Mar–Sep 2025. I assembled a TortoiseBot (8&nbsp;GB Raspberry Pi, YDLiDAR S2, IMU, motor driver, Pi camera), brought it up over SSH, and ran teleoperation, Cartographer mapping and Nav2 navigation in ROS&nbsp;2. Every image below is a real screenshot from my own runs. TortoiseBot kit and base software by RigBetel Labs.</p>
+    <div class="sec-head"><div class="row"><span class="num">04</span><h2>SLAM lab: TortoiseBot</h2></div>
+      <p>IIT Delhi Executive Programme in Robotics, Mar–Sep 2025. I assembled a TortoiseBot (8&nbsp;GB Raspberry Pi, YDLiDAR S2, IMU, motor driver, Pi camera), brought it up over SSH, and ran teleoperation, Cartographer mapping and navigation in ROS. Every image below is from my own runs. TortoiseBot kit and base software by RigBetel Labs.</p>
     </div>
 
     <div class="lab-top">
@@ -452,8 +655,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
         <ul>
           <li>Full hardware assembly and wiring of LiDAR, IMU, camera and motor driver.</li>
           <li>Robot bring-up and teleoperation over SSH from the laptop.</li>
-          <li>Occupancy-grid mapping with Cartographer, and autonomous navigation with Nav2.</li>
-          <li>Fixed build conflicts between the Nav2, Cartographer and BehaviorTree packages.</li>
+          <li>Occupancy-grid mapping with Cartographer, and autonomous navigation.</li>
+          <li>Fixed build conflicts between the navigation, Cartographer and BehaviorTree packages.</li>
           <li>Used rqt_graph and TF views to check that every node and frame was connected.</li>
         </ul>
       </div>
@@ -463,20 +666,14 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
       <figure><img src="map-step-1.jpg" alt="Early Cartographer map: a narrow corridor" data-cap="Mapping run, 23 Aug 2025: a corridor appears as the robot drives"><figcaption>run 1 · corridor</figcaption></figure>
       <figure><img src="map-step-3.jpg" alt="Cartographer map with walls and obstacles" data-cap="Mapping run: walls (black) and free space (grey)"><figcaption>run 3 · walls</figcaption></figure>
       <figure><img src="map-step-5.jpg" alt="Larger Cartographer map of the full area" data-cap="Mapping run: the larger area mapped"><figcaption>run 5 · full area</figcaption></figure>
+      <figure><img src="slam-teleop-mapping.jpg" alt="RViz map with teleoperation terminal" data-cap="Teleoperation from the keyboard while the map builds in RViz"><figcaption>teleop + mapping</figcaption></figure>
     </div>
 
-    <div class="gallery">
-      <figure class="shot"><img src="slam-bringup.jpg" alt="Terminal showing TortoiseBot bring-up logs" data-cap="Robot bring-up over SSH: LiDAR, camera and firmware nodes starting"><figcaption><b>Bring-up.</b> LiDAR, camera and firmware nodes starting on the robot over SSH.</figcaption></figure>
-      <figure class="shot"><img src="slam-teleop-mapping.jpg" alt="RViz map with teleoperation terminal" data-cap="Teleoperation from the keyboard while the map builds in RViz"><figcaption><b>Teleop + mapping.</b> Driving from the keyboard while Cartographer builds the map.</figcaption></figure>
-      <figure class="shot"><img src="slam-rqt-graph.jpg" alt="rqt_graph showing ROS nodes and topics" data-cap="rqt_graph: teleop → /cmd_vel → differential drive, and the camera pipeline"><figcaption><b>Node graph.</b> teleop → /cmd_vel → drive, plus the camera pipeline.</figcaption></figure>
-      <figure class="shot"><img src="slam-tf-rviz.jpg" alt="RViz showing TF frames and laser scan" data-cap="RViz with TF frames and the live laser scan"><figcaption><b>TF frames.</b> Checking frames and the live laser scan in RViz.</figcaption></figure>
-      <figure class="shot"><img src="slam-map-full.jpg" alt="Full RViz window with a large occupancy grid map" data-cap="A larger occupancy grid built with Cartographer"><figcaption><b>Occupancy grid.</b> A larger map built from several minutes of driving.</figcaption></figure>
-    </div>
   </section>
 
   <!-- SKILLS -->
   <section id="skills">
-    <div class="sec-head"><div class="row"><span class="num">04</span><h2>Skills</h2></div></div>
+    <div class="sec-head"><div class="row"><span class="num">05</span><h2>Skills</h2></div></div>
     <div class="skills">
       <div class="panel skill"><h3>Robotics</h3><div class="chips">
         <span class="chip">ROS / ROS 2</span><span class="chip">Nav2</span><span class="chip">SLAM (Cartographer, slam_toolbox)</span><span class="chip">LiDAR</span><span class="chip">Intel RealSense</span><span class="chip">Sensor fusion</span><span class="chip">RViz</span><span class="chip">Gazebo</span><span class="chip">Behavior Trees</span></div></div>
@@ -490,93 +687,6 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
         <span class="chip">Release management</span><span class="chip">Hotfix integration</span><span class="chip">Regression &amp; long-run tests</span><span class="chip">Test automation</span><span class="chip">Defect triage</span><span class="chip">Root cause analysis</span><span class="chip">Jira</span></div></div>
       <div class="panel skill"><h3>Working style</h3><div class="chips">
         <span class="chip">Delhi ↔ Korea HQ liaison</span><span class="chip">QA negotiation</span><span class="chip">Risk planning</span><span class="chip">Clear escalation</span><span class="chip">Mentoring 4 interns</span></div></div>
-    </div>
-  </section>
-
-  <!-- SAMSUNG -->
-  <section id="samsung">
-    <div class="sec-head"><div class="row"><span class="num">05</span><h2>Industry: embedded Linux, testing and release at Samsung R&amp;D</h2></div>
-      <p>Software Engineer, TV Product Group, Samsung R&amp;D Institute India – Delhi (Jul 2022 – Aug 2026, after a 6-month internship). Premium Smart TVs run Tizen, an embedded Linux OS, and ship to ATSC, DVB and ISDB regions. Each year had two phases: about 4 months getting new models ready for the factory, and about 8 months improving TVs already in people's homes through over-the-network updates.</p>
-    </div>
-
-    <div class="dark-band">
-      <h3>Where I worked in the firmware lifecycle</h3>
-      <svg class="pipeline" viewBox="0 0 1060 170" role="img" aria-label="Firmware lifecycle: feature kickoff, private image check, sanitizer and memory passes, regression and long-run tests, hotfix integration, factory release, updates over the network">
-        <defs><marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#35d0ba"/></marker></defs>
-        <g font-family="Inter,Arial" text-anchor="middle">
-          <g transform="translate(10 40)"><rect width="128" height="70" rx="12" fill="#132f44" stroke="#2a5068"/><text x="64" y="30" fill="#fff" font-size="13" font-weight="600">Feature</text><text x="64" y="48" fill="#fff" font-size="13" font-weight="600">kickoff</text><text x="64" y="64" fill="#93a6b4" font-size="11">200–300 features</text></g>
-          <g transform="translate(160 40)"><rect width="128" height="70" rx="12" fill="#132f44" stroke="#2a5068"/><text x="64" y="30" fill="#fff" font-size="13" font-weight="600">Private image</text><text x="64" y="48" fill="#fff" font-size="13" font-weight="600">check</text><text x="64" y="64" fill="#93a6b4" font-size="11">every fix, on a TV</text></g>
-          <g transform="translate(310 40)"><rect width="128" height="70" rx="12" fill="#0f3b3a" stroke="#35d0ba"/><text x="64" y="30" fill="#fff" font-size="13" font-weight="600">Sanitizer &amp;</text><text x="64" y="48" fill="#fff" font-size="13" font-weight="600">memory passes</text><text x="64" y="64" fill="#7fe3d3" font-size="11">KASAN · ASan</text></g>
-          <g transform="translate(460 40)"><rect width="128" height="70" rx="12" fill="#132f44" stroke="#2a5068"/><text x="64" y="30" fill="#fff" font-size="13" font-weight="600">Regression &amp;</text><text x="64" y="48" fill="#fff" font-size="13" font-weight="600">long-run tests</text><text x="64" y="64" fill="#93a6b4" font-size="11">deadlocks · timing</text></g>
-          <g transform="translate(610 40)"><rect width="128" height="70" rx="12" fill="#0f3b3a" stroke="#35d0ba"/><text x="64" y="30" fill="#fff" font-size="13" font-weight="600">Hotfix</text><text x="64" y="48" fill="#fff" font-size="13" font-weight="600">integration</text><text x="64" y="64" fill="#7fe3d3" font-size="11">Perforce changelists</text></g>
-          <g transform="translate(760 40)"><rect width="128" height="70" rx="12" fill="#0f3b3a" stroke="#35d0ba"/><text x="64" y="30" fill="#fff" font-size="13" font-weight="600">Factory</text><text x="64" y="48" fill="#fff" font-size="13" font-weight="600">release</text><text x="64" y="64" fill="#7fe3d3" font-size="11">5k–10k TVs per batch</text></g>
-          <g transform="translate(910 40)"><rect width="140" height="70" rx="12" fill="#132f44" stroke="#2a5068"/><text x="70" y="30" fill="#fff" font-size="13" font-weight="600">Updates to TVs</text><text x="70" y="48" fill="#fff" font-size="13" font-weight="600">in homes</text><text x="70" y="64" fill="#93a6b4" font-size="11">over-the-network</text></g>
-        </g>
-        <g stroke="#35d0ba" stroke-width="2" fill="none" class="flow">
-          <path d="M138 75H156" marker-end="url(#ar)"/><path d="M288 75H306" marker-end="url(#ar)"/><path d="M438 75H456" marker-end="url(#ar)"/><path d="M588 75H606" marker-end="url(#ar)"/><path d="M738 75H756" marker-end="url(#ar)"/><path d="M888 75H906" marker-end="url(#ar)"/>
-        </g>
-        <path d="M980 112 V140 H224 V114" fill="none" stroke="#f2a541" stroke-width="1.5" stroke-dasharray="4 5" marker-end="url(#ar)"/>
-        <text x="600" y="160" fill="#f2a541" font-family="Inter,Arial" font-size="11" text-anchor="middle">post-market rounds: the released image becomes the base for the next fixes</text>
-        <text x="10" y="22" fill="#93a6b4" font-family="Inter,Arial" font-size="11">Teal boxes = where I spent most of my time</text>
-      </svg>
-    </div>
-
-    <div class="sam-grid">
-      <div class="panel">
-        <h3><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6v6H9zM9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 14h3M1 9h3M1 14h3"/></svg></span>Kernel &amp; memory debugging</h3>
-        <ol>
-          <li>Flash a KASAN / AddressSanitizer image onto the TV or EVK board (it runs very slowly).</li>
-          <li>Drive real actions: HDMI plug and unplug, volume, app launches like Netflix.</li>
-          <li>Watch kernel logs for "tainted" and error reports, and capture logs at the moment of failure.</li>
-          <li>Match each report to the physical action that caused it, then raise a defect with logs for the developer.</li>
-        </ol>
-        <div class="kv"><span>heap-use-after-free</span><span>buffer overflow</span><span>memory leak</span><span>core dump</span></div>
-        <p class="honest">On TV firmware, I ran the sanitizer images and triaged from the logs; the developers wrote the code fixes. The tools I wrote myself are under <a href="#projects">Projects</a>.</p>
-      </div>
-      <div class="panel">
-        <h3><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="6" cy="6" r="2"/><circle cx="6" cy="18" r="2"/><circle cx="18" cy="12" r="2"/><path d="M6 8v8M8 6h4a4 4 0 0 1 4 4v0M8 18h4a4 4 0 0 0 4-4"/></svg></span>Release &amp; hotfix engineering</h3>
-        <ul>
-          <li>Built full and hotfix firmware images in Perforce and cherry-picked changelists into release images.</li>
-          <li>Checked fixes on a private image on a real TV before accepting them, and sent failures back with video and logs.</li>
-          <li>For risky fixes, built two images, one with the fix and one without, and shipped only once the side effect was ruled out. Example: an audio-driver fix with a possible side effect on the UI.</li>
-          <li>Memory profiling before market releases, and package-dependency analysis to cut memory use on low-RAM models.</li>
-          <li>350+ fixes across 5 chipsets, 95% within target schedule.</li>
-        </ul>
-      </div>
-      <div class="panel">
-        <h3><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 2 3h10a2 2 0 0 0 2-3l-5-9V3"/></svg></span>Test tools &amp; coordination</h3>
-        <ul>
-          <li>Long-run suites that catch CPU deadlocks on 4-core hardware, and a remote testbed for many TVs at once.</li>
-          <li>Python tools over serial for pre-production checks and changelist checks from firmware XML.</li>
-          <li>Validation on new vendor EVK boards, including working with the HQ hardware team when a batch of boards overheated and shut down.</li>
-          <li>Main link between the Delhi team, QA and Samsung HQ in Korea; coordinated field testers in five regions.</li>
-          <li>Mentored 4 interns on memory profiling, sanitizer images and log analysis.</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="stories">
-      <article class="story">
-        <span class="tag">Ownership</span>
-        <h3>Validation and release for a North American TV model</h3>
-        <p>A model for the Black Friday sale. Validation and release usually involves 3–4 engineers; I coordinated it on my own: QA meetings, sanitizer and memory passes, and holiday-risk planning.</p>
-        <p>After the October holidays, critical boot-time and UI-performance defects were still open and beyond my authority. I took them to the HQ product manager, so HQ QA could decide whether to change the spec or accept them.</p>
-        <div class="result">Shipped on time for Black Friday.</div>
-      </article>
-      <article class="story">
-        <span class="tag">Attention to detail</span>
-        <h3>The last-day catch</h3>
-        <p>On the final factory-image day, a developer's build had the right changes but used an outdated configuration data file. I spotted it from the file name as soon as the file appeared.</p>
-        <p>The fix landed in about 2 hours and I rebuilt the factory images in the next 2–3. I opened a group chat with HQ to find the root cause: one wrong file name in one section.</p>
-        <div class="result">The wrong file was caught before the factory images went out, and the deadline held.</div>
-      </article>
-      <article class="story">
-        <span class="tag">Judgement</span>
-        <h3>China-market firmware release</h3>
-        <p>A 5–6 week release for an Android-on-Tizen chipset for the Chinese market. I set up the project, drove the QA meetings and decided with developers which changelists belonged in the build.</p>
-        <p>Many changes were shared across chipsets. I kept out a home-screen UI fix that was correct elsewhere but wrong for the different Chinese UI.</p>
-        <div class="result">Hit the factory date, so mass production started on time.</div>
-      </article>
     </div>
   </section>
 
@@ -674,8 +784,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
       <thead><tr><th scope="col">Competence area</th><th scope="col">Evidence on this page</th></tr></thead>
       <tbody>
         <tr><td>A · Knowledge and understanding</td><td><a href="#skills">Skills</a>; <a href="#certificates">courses and certificates</a> (IIT Delhi robotics, Modern Robotics, reinforcement learning); MSc Robotics at Manchester.</td></tr>
-        <tr><td>B · Design, development and problem solving</td><td><a href="#lab">SLAM lab</a> (robot built from parts, LiDAR ghost-points bug); <a href="#projects">Leo Rover vision tests</a>; factory-firmware automation tool.</td></tr>
-        <tr><td>C · Responsibility, management and leadership</td><td><a href="#samsung">Industry</a>: release coordination, test planning across five regions, mentoring 4 interns.</td></tr>
+        <tr><td>B · Design, development and problem solving</td><td><a href="#lab">SLAM lab</a> (robot built from parts, LiDAR ghost-points bug); <a href="#projects">Leo Rover vision tests</a>; <a href="#tools">factory-firmware automation tool</a>.</td></tr>
+        <tr><td>C · Responsibility, management and leadership</td><td><a href="#samsung">Samsung</a>: release coordination, test planning across five regions, mentoring 4 interns.</td></tr>
         <tr><td>D · Communication and interpersonal skills</td><td><a href="#publications">Publications and talks</a>, including a talk in Doha; liaison between the Delhi team and Samsung HQ in Korea.</td></tr>
         <tr><td>E · Professional commitment</td><td>IET student member; IEEE member; member of the University of Manchester Robotics Society; AI use stated openly (see footer).</td></tr>
       </tbody>
