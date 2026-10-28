@@ -302,7 +302,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
   <div class="wrap">
     <div>
       <div class="eyebrow"><span class="dot"></span><span>MSc Robotics with Extended Research<span class="eb-sep"> · </span><br class="eb-br">The University of Manchester</span></div>
-      <h1>Hi, I'm Amit.<br>I build <em>robots that see</em> and software that ships.</h1>
+      <h1>Hi, I'm Amit.<br>I build software that ships, and now <em>robots that see</em>.</h1>
       <p class="lead">I'm studying for an MSc in Robotics with Extended Research, working on SLAM, ROS&nbsp;2 and computer vision. Before this, I spent four years at Samsung R&amp;D on embedded Linux for Smart AI TVs: memory and kernel debugging on new hardware, firmware releases, and automation tools used across the TV Product Group.</p>
       <div class="btns">
         <a class="btn btn-primary" href="Amit_Nath_Gupta_CV.pdf" target="_blank" rel="noopener">
@@ -324,7 +324,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
 
   <div class="stats" aria-label="Highlights">
     <div class="stat"><b>4 yrs</b><span>R&amp;D software engineer, Samsung</span></div>
-    <div class="stat"><b>350+</b><span>fixes integrated across 5 chipsets, 95% on schedule</span></div>
+    <div class="stat"><b>350+</b><span>fixes integrated across 5 chipsets; 95% of releases on schedule</span></div>
     <div class="stat"><b>48–60</b><span>factory firmware sets per cycle, automated overnight</span></div>
     <div class="stat"><b>4</b><span>papers and conference talks</span></div>
   </div>
@@ -336,11 +336,11 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
       <div class="panel">
         <h3><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg></span>Who I am</h3>
         <p>I'm an electronics engineer (BIT Mesra) turned robotics student. At Samsung I worked where software meets hardware: flashing debug images onto new boards, reading kernel and serial logs, tracing crashes back to what was physically happening on the device, and getting firmware safely to the factory.</p>
-        <p>Robots have the same problem with more moving parts. At Manchester I'm taking that debugging discipline to mapping, perception and manipulation on real hardware.</p>
+        <p>Robots need the same skills, with more moving parts. At Manchester I'm taking that debugging discipline to mapping, perception and manipulation on real hardware.</p>
       </div>
       <div class="panel">
         <h3><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z"/></svg></span>Career goals &amp; research interests</h3>
-        <p><b>Goal:</b> a robotics software role after my MSc, as a robotics software, SLAM, or test and simulation engineer, where four years of embedded debugging and release discipline are a real advantage.</p>
+        <p><b>Goal:</b> after my MSc, a role as a robotics software, SLAM, or test and simulation engineer, where four years of embedded debugging and release discipline are a real advantage.</p>
         <ul>
           <li>SLAM that stays reliable when lighting changes</li>
           <li>Perception with RGB and depth cameras for grasping</li>
@@ -393,13 +393,13 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
             <path d="M30 160 C80 120 120 140 160 110 S250 70 295 90" fill="none" stroke="#c9d6df" stroke-width="2.5"/>
             <path class="draw" d="M30 160 C82 126 118 150 162 118 S246 88 295 112" fill="none" stroke="#35d0ba" stroke-width="2.5" stroke-dasharray="5 5"/>
             <g stroke="#e5484d" stroke-width="1.2" opacity=".8"><path d="M200 99v12M240 86v14M280 89v20"/></g>
-            <text x="12" y="190" fill="#6f8798" font-family="monospace" font-size="10">ground truth vs estimate · ATE / RPE</text>
+            <text x="12" y="190" fill="#6f8798" font-family="monospace" font-size="10">illustration only · ATE / RPE</text>
           </svg>
         </div>
         <div class="body">
           <span class="meta">Independent research <span class="status">Planned</span></span>
           <h3>Does SLAM survive the lights going down?</h3>
-          <p>A planned study of how SLAM accuracy changes from bright to dim light, on my TortoiseBot. The plan is to measure trajectory error (ATE/RPE) with evo, with five runs per lighting level to get error bars.</p>
+          <p>A planned study testing whether SLAM accuracy on my TortoiseBot changes between bright and dim light. I will measure trajectory error (ATE/RPE) with evo, with five runs per lighting level for error bars.</p>
           <div class="tags"><span class="tag">SLAM</span><span class="tag">evo</span><span class="tag">Experiment design</span></div>
         </div>
       </article>
@@ -439,7 +439,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
         <div class="kpi"><b>95<em>%</em></b><span>of releases within target schedule</span></div>
         <div class="kpi"><b>5</b><span>chipsets across ATSC, DVB and ISDB regions</span></div>
         <div class="kpi"><b>48–60</b><span>factory firmware sets per cycle, uploaded overnight by my tool</span></div>
-        <div class="kpi"><b>24</b><span>projects assigned to me in one product kickoff</span></div>
+        <div class="kpi"><b>24</b><span>features assigned to me in one product kickoff</span></div>
         <div class="kpi"><b>4</b><span>interns mentored</span></div>
       </div>
     </div>
@@ -495,7 +495,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
           <li>Match each report to the physical action that caused it, then raise a defect with logs for the developer.</li>
         </ol>
         <div class="kv"><span>heap-use-after-free</span><span>buffer overflow</span><span>memory leak</span><span>core dump</span></div>
-        <p class="honest">On TV firmware, I ran the sanitizer images and triaged from the logs; the developers wrote the code fixes. The tools I wrote myself are under <a href="#tools">Tools I built</a>.</p>
+        <p class="honest">On TV firmware, I ran the sanitizer images and traced failures from the logs; each component's developers wrote the code fixes. The tools I wrote myself are under <a href="#tools">Tools I built</a>.</p>
       </div>
       <div class="panel">
         <h3><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg></span>Memory &amp; performance</h3>
@@ -503,16 +503,15 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
           <li>Memory profiling of each binary before a market release, hunting leaks, crashes and deadlocks through crash dumps and call stacks.</li>
           <li>Package-dependency analysis on the display Linux package to cut memory use on low-RAM models.</li>
           <li>Worked on a daemon that watches CPU, flash and RAM use of every process and cleans up on excessive use.</li>
-          <li>Boot-time and responsiveness defects measured per process in milliseconds against spec, and the trade-off between richer animations and boot time on a 4-core CPU.</li>
+          <li>Tracked boot-time and responsiveness defects per process in milliseconds against spec, and mediated the trade-off between richer animations and boot time on a 4-core CPU.</li>
         </ul>
       </div>
       <div class="panel">
         <h3><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="6" cy="6" r="2"/><circle cx="6" cy="18" r="2"/><circle cx="18" cy="12" r="2"/><path d="M6 8v8M8 6h4a4 4 0 0 1 4 4v0M8 18h4a4 4 0 0 0 4-4"/></svg></span>Release &amp; hotfix engineering</h3>
         <ul>
-          <li>Built full and hotfix firmware images in Perforce Helix and cherry-picked changelists into release images.</li>
+          <li>Built full and hotfix firmware images from Perforce Helix changelists, and cherry-picked fixes into release images.</li>
           <li>Triaged defects by severity and component, and checked fixes on a private image on a real TV before accepting them.</li>
           <li>For risky fixes, built two images, one with the fix and one without, and shipped only once the side effect was ruled out.</li>
-          <li><b>350+ fixes across 5 chipsets, 95% within target schedule.</b></li>
         </ul>
       </div>
       <div class="panel">
@@ -528,7 +527,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
         <h3><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></span>Coordination &amp; risk</h3>
         <ul>
           <li>Main link between the Delhi product team and QA, and between Delhi and Samsung HQ in Korea.</li>
-          <li>Coordinated field testers in America, Poland, Korea, Chennai and Europe.</li>
+          <li>Coordinated field testers in America, Poland and the rest of Europe, Korea, and Chennai in India.</li>
           <li>Negotiated test-round counts and which fixes moved to a later round, and planned around Diwali and Chuseok.</li>
           <li>Justified test-unit allocation, and managed schedule dependencies on third-party apps such as Netflix.</li>
         </ul>
@@ -569,7 +568,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
         <div class="body">
           <span class="meta">Built by me · Python</span>
           <h3>Factory firmware registration automation</h3>
-          <p>Each firmware set (12–26&nbsp;GB) had to be registered by hand for the factory: about 20–25 minutes each, 6–7 per engineer, and one mistake could put a factory batch of 5,000–10,000 TVs at risk. I built an OCR + OpenCV + PyAutoGUI uploader that runs unattended overnight, plus a separate checker that compares each image with the repository copy by checksum.</p>
+          <p>Each firmware set (12–26&nbsp;GB) had to be registered by hand for the factory: about 20–25 minutes each, 6–7 per engineer and 48–60 per cycle across the group, and one mistake could put a factory batch of 5,000–10,000 TVs at risk. I built an OCR + OpenCV + PyAutoGUI uploader that runs unattended overnight, plus a separate checker that compares each image with the repository copy by checksum.</p>
           <p>The idea and the checksum check came from my director; I designed and built both tools in Python over about two months. It turned a four-person, two-hour job into a one-person job, was adopted across the TV Product Group, and caught colleagues' errors before they reached the factory. I later led three interns who added a React front-end.</p>
           <div class="tags"><span class="tag">Python</span><span class="tag">OpenCV</span><span class="tag">OCR</span><span class="tag">PyAutoGUI</span><span class="tag">Checksums</span></div>
         </div>
@@ -600,8 +599,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
     <div class="stories">
       <article class="story">
         <span class="tag">Ownership</span>
-        <h3>A Black Friday launch, single-handed</h3>
-        <p>A premium North American model for the Black Friday sale. Product validation and release usually takes 3–4 engineers; I ran it on my own: QA meetings, sanitizer and memory passes, and holiday-risk planning.</p>
+        <h3>A Black Friday release, run solo</h3>
+        <p>A premium North American model for the Black Friday sale. Product validation and release usually take 3–4 engineers; I ran both on my own: QA meetings, sanitizer and memory passes, and holiday-risk planning.</p>
         <p>After the October holidays, critical boot-time and UI-performance defects were still open and beyond my authority. I took them to the HQ product manager, so HQ QA could decide whether to change the spec or accept them.</p>
         <div class="result">Shipped on time for Black Friday.</div>
       </article>
@@ -609,7 +608,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
         <span class="tag">Attention to detail</span>
         <h3>The last-day catch</h3>
         <p>On the final factory-image day, a developer's build had the right changes but used an outdated configuration data file. I spotted it from the file name as soon as the file appeared.</p>
-        <p>The fix landed in about 2 hours and I rebuilt the factory images in the next 2–3. I opened a group chat with HQ to find the root cause: one wrong file name in one section.</p>
+        <p>The fix landed in about 2 hours and I rebuilt the factory images over the next 2–3 hours. I then worked with HQ to trace the root cause: the file name had been entered wrongly in one section.</p>
         <div class="result">The wrong file never reached the factory, and the deadline held.</div>
       </article>
       <article class="story">
@@ -650,7 +649,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
           <source src="slam-rviz-bug.mp4" type="video/mp4">
           <source src="slam-rviz-bug.webm" type="video/webm">
         </video>
-        <div class="cap"><b>Screen recording, 2 Aug 2025.</b> Driving the robot from the keyboard (left) while RViz shows LiDAR points piling up in rings. Old points stayed on screen and showed up as fake obstacles along the robot's path. I tracked this defect down and fixed it.</div>
+        <div class="cap"><b>Screen recording, 2 Aug 2025.</b> Driving the robot from the keyboard (left) while RViz shows LiDAR points piling up in rings. Old points stayed on screen and showed up as fake obstacles along the robot's path. I tracked down the cause and fixed it, so old points no longer stayed on screen.</div>
       </div>
       <div class="panel">
         <h3><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 3v9l6 3"/></svg></span>What I did</h3>
@@ -688,7 +687,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
       <div class="panel skill"><h3>Testing &amp; release</h3><div class="chips">
         <span class="chip">Release management</span><span class="chip">Hotfix integration</span><span class="chip">Regression &amp; long-run tests</span><span class="chip">Test automation</span><span class="chip">Defect triage</span><span class="chip">Root cause analysis</span><span class="chip">Jira</span></div></div>
       <div class="panel skill"><h3>Working style</h3><div class="chips">
-        <span class="chip">Delhi ↔ Korea HQ liaison</span><span class="chip">QA negotiation</span><span class="chip">Risk planning</span><span class="chip">Clear escalation</span><span class="chip">Mentoring 4 interns</span></div></div>
+        <span class="chip">Delhi ↔ Korea HQ liaison</span><span class="chip">QA negotiation</span><span class="chip">Risk planning</span><span class="chip">Clear escalation</span><span class="chip">Mentoring interns</span></div></div>
     </div>
   </section>
 
@@ -700,13 +699,13 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
         <div class="when">Sep 2026 – Jun 2028</div>
         <h3>MSc Robotics with Extended Research</h3>
         <div class="where">The University of Manchester</div>
-        <p style="margin:0">Team 7 on the Robotic Systems Design Project (Leo Rover + myCobot arm). Member of the University Robotics Society.</p>
+        <p style="margin:0">Team 7 on the Robotic Systems Design Project (Leo Rover + myCobot arm). IET student member, IEEE member, and member of the University Robotics Society.</p>
       </div></div>
       <div class="tl"><div class="panel">
         <div class="when">Jul 2022 – Aug 2026</div>
         <h3>Software Engineer, TV Product Group</h3>
         <div class="where">Samsung R&amp;D Institute India – Delhi</div>
-        <p style="margin:0">Embedded Linux (Tizen) debugging, release and hotfix engineering, and automation tooling for premium Smart AI TVs. <a href="#samsung">Details above ↑</a></p>
+        <p style="margin:0">Embedded Linux (Tizen) debugging, release and hotfix engineering, and automation tooling for premium Smart AI TVs. <a href="#samsung" style="white-space:nowrap">Details above ↑</a></p>
       </div></div>
       <div class="tl"><div class="panel">
         <div class="when">Jan 2022 – Jul 2022</div>
@@ -732,7 +731,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
         <div>
           <h3>A Medical Diagnosis of Cataract Using Intuitionistic Fuzzy Sets</h3>
           <div class="venue">Journal article · Kaur, P. &amp; <b>Gupta, A. N.</b> · Risk Assessment and Management Decisions, 2(2), 88–94</div>
-          <p>A case study using intuitionistic fuzzy sets to find the most likely cause and type of cataract in patients over 40. In data from 50 patients in Jharkhand, diabetes came out as the leading cause.</p>
+          <p>A case study using intuitionistic fuzzy sets to find the most likely cause and type of cataract in patients over 40. In data from 50 patients in Jharkhand, diabetes was identified as the most likely cause.</p>
           <div class="links"><a href="https://doi.org/10.48314/ramd.vi.63" target="_blank" rel="noopener">DOI: 10.48314/ramd.vi.63</a><a href="https://ramd.reapress.com/journal/article/view/63" target="_blank" rel="noopener">Read the paper →</a></div>
         </div>
       </div>
@@ -749,7 +748,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
         <img class="thumb" src="cert-esi-qatar.jpg" alt="ESI 2025 certificate of participation" data-cap="Certificate of participation, ESI 2025, Qatar University, 8–11 November 2025">
         <div>
           <h3>Applying Hybrid ML-MCDM Approaches for Ranking Jharkhand Districts for Sustainable Mining</h3>
-          <div class="venue">Conference presentation · Kaur, P. &amp; <b>Gupta, A. N.</b> · 8th Int. Conf. on Entrepreneurship for Sustainability &amp; Impact (ESI 2025), Qatar University, Doha · Presented in person</div>
+          <div class="venue">Conference presentation · Kaur, P. &amp; <b>Gupta, A. N.</b> · 8th Int. Conf. on Entrepreneurship for Sustainability &amp; Impact (ESI 2025), Qatar University, Doha · In person</div>
           <p>Random Forest and Gradient Boosting combined with VIKOR, MOORA and EDAS. The three methods gave similar rankings.</p>
         </div>
       </div>
@@ -757,7 +756,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
         <div class="yrbox">2019<small>TALK</small></div>
         <div>
           <h3>A Comparative Analysis of a Multi-Objective Investment Selection Problem Using Fuzzy Logic</h3>
-          <div class="venue">Conference presentation · Kaur, P. &amp; <b>Gupta, A. N.</b> · Int. Conf. on Operations Research and Decision Sciences, IIM Visakhapatnam, 2019 · Presented</div>
+          <div class="venue">Conference presentation · Kaur, P. &amp; <b>Gupta, A. N.</b> · Int. Conf. on Operations Research and Decision Sciences, IIM Visakhapatnam, 2019</div>
         </div>
       </div>
     </div>
@@ -765,7 +764,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
 
   <!-- CERTIFICATES -->
   <section id="certificates">
-    <div class="sec-head"><div class="row"><span class="num">08</span><h2>Courses &amp; certificates</h2></div><p>Click a certificate image to enlarge it.</p></div>
+    <div class="sec-head"><div class="row"><span class="num">08</span><h2>Courses &amp; certificates</h2></div><p>Click any certificate image to enlarge it.</p></div>
     <div class="certs">
       <div class="cert"><div class="img"><img src="cert-iitd.jpg" alt="IIT Delhi certificate, Executive Programme in Robotics" data-cap="IIT Delhi, Executive Programme in Robotics (29 Mar – 21 Sep 2025)"></div>
         <div class="txt"><h3>Executive Programme in Robotics</h3><p>Indian Institute of Technology Delhi · Mar–Sep 2025</p></div></div>
@@ -774,7 +773,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
       <div class="cert"><div class="img"><img src="cert-simplilearn.jpg" alt="Simplilearn Data Scientist Masters Program certificate" data-cap="Simplilearn, Data Scientist Masters Program (June 2025)"></div>
         <div class="txt"><h3>Data Scientist Masters Program</h3><p>Simplilearn · Jun 2025</p><a href="https://success.simplilearn.com/59f3d4e6-9ef6-41ff-80bb-accd0fd8f7e7" target="_blank" rel="noopener">Verify →</a></div></div>
       <div class="cert"><div class="img" style="background:linear-gradient(160deg,#1c5d99,#0b1f2e)"><div class="badge" style="background:rgba(255,255,255,.12);width:80px;height:80px;font-size:24px">IISc</div></div>
-        <div class="txt"><h3>Reinforcement Learning (3:0)</h3><p>Indian Institute of Science, CCE Proficience · May–Jul 2026 (Prof. Shalabh Bhatnagar)</p></div></div>
+        <div class="txt"><h3>Reinforcement Learning</h3><p>Indian Institute of Science, CCE Proficience · May–Jul 2026 (Prof. Shalabh Bhatnagar)</p></div></div>
     </div>
   </section>
 
