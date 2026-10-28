@@ -15,7 +15,7 @@
 <style>
 :root{
   --ink:#0b1f2e; --ink-2:#132f44; --text:#1d2a35; --muted:#5b6b78; --line:#e3e7ea;
-  --paper:#f6f7f5; --card:#ffffff; --accent:#13a594; --accent-2:#35d0ba; --warm:#f2a541; --red:#e5484d;
+  --paper:#f6f7f5; --card:#ffffff; --accent:#007f73; --accent-2:#35d0ba; --warm:#f2a541; --red:#e5484d;
   --radius:16px; --shadow:0 1px 2px rgba(11,31,46,.06),0 8px 24px rgba(11,31,46,.06);
   --mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
 }
@@ -115,9 +115,9 @@ section{padding:84px 0 0;scroll-margin-top:60px}
 .video-card video{width:100%;aspect-ratio:16/9;background:#000}
 .video-card .cap{padding:14px 18px;color:#c3d0d9;font-size:14px}
 .video-card .cap b{color:#fff}
-.strip{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:20px}
+.strip{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:20px}
 .strip figure{margin:0}
-.strip img{border-radius:10px;aspect-ratio:6/5;object-fit:cover;width:100%;border:1px solid var(--line);cursor:zoom-in}
+.strip img{border-radius:10px;aspect-ratio:4/3;object-fit:cover;width:100%;border:1px solid var(--line);cursor:zoom-in}
 .strip figcaption{font-family:var(--mono);font-size:11.5px;color:var(--muted);margin-top:6px;text-align:center}
 .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:20px}
 .shot{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);margin:0}
@@ -219,6 +219,30 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
   .contact .btns{justify-content:flex-start}
   .pub{grid-template-columns:1fr;gap:12px}
 }
+
+/* v3 additions */
+:focus-visible{outline:3px solid #f2a541;outline-offset:2px;border-radius:4px}
+.prog{margin:2px 0 0;padding-left:18px;font-size:14.5px;color:#3a4955}
+.prog li{margin:3px 0}
+.proj .art img.photo{object-fit:cover;object-position:center 60%}
+.proj.feature{grid-column:1/-1;flex-direction:row}
+.proj.feature .art{flex:0 0 44%;aspect-ratio:auto;min-height:100%}
+.proj.feature .body{padding:24px 28px}
+.proj.feature h3{font-size:22px}
+@media (max-width:760px){.proj.feature{flex-direction:column}.proj.feature .art{aspect-ratio:16/10;min-height:0}.proj.feature .body{padding:18px 20px 20px}}
+.cpd{width:100%;border-collapse:separate;border-spacing:0;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);font-size:15px}
+.cpd th,.cpd td{padding:12px 16px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+.cpd th{background:#eef3f2;color:var(--ink);font-family:"Space Grotesk",Inter,sans-serif;font-weight:600}
+.cpd tr:last-child td{border-bottom:0}
+.cpd td:first-child{font-weight:600;color:var(--ink);width:32%}
+@media (max-width:760px){.cpd th,.cpd td{padding:10px 12px}.cpd td:first-child{width:auto}}
+@media print{
+  .nav,.lb,.menu-btn{display:none!important}
+  section{padding-top:28px}
+  .panel,.proj,.shot,.cert,.story,.stat,.pub,figure,tr{break-inside:avoid}
+  .sec-head{break-after:avoid}
+  .contact{break-inside:avoid}
+}
 </style>
 </head>
 <body>
@@ -229,11 +253,12 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
     <button class="menu-btn" aria-expanded="false" aria-controls="menu">Menu</button>
     <ul id="menu">
       <li><a class="link" href="#about">About</a></li>
-      <li><a class="link" href="#samsung">Samsung</a></li>
-      <li><a class="link" href="#lab">SLAM lab</a></li>
       <li><a class="link" href="#projects">Projects</a></li>
-      <li><a class="link" href="#publications">Papers</a></li>
-      <li><a class="link" href="#certificates">Certificates</a></li>
+      <li><a class="link" href="#lab">SLAM lab</a></li>
+      <li><a class="link" href="#skills">Skills</a></li>
+      <li><a class="link" href="#samsung">Industry</a></li>
+      <li><a class="link" href="#publications">Publications</a></li>
+      <li><a class="link" href="#cpd">CPD</a></li>
       <li><a class="link" href="#contact">Contact</a></li>
     </ul>
   </div>
@@ -292,193 +317,35 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
     </div>
   </section>
 
-  <!-- SKILLS -->
-  <section id="skills">
-    <div class="sec-head"><div class="row"><span class="num">02</span><h2>Skills</h2></div></div>
-    <div class="skills">
-      <div class="panel skill"><h3>Robotics</h3><div class="chips">
-        <span class="chip">ROS / ROS 2</span><span class="chip">Nav2</span><span class="chip">SLAM (Cartographer, slam_toolbox)</span><span class="chip">LiDAR</span><span class="chip">Intel RealSense</span><span class="chip">Sensor fusion</span><span class="chip">RViz</span><span class="chip">Gazebo</span><span class="chip">Behavior Trees</span></div></div>
-      <div class="panel skill"><h3>Embedded Linux &amp; debugging</h3><div class="chips">
-        <span class="chip">Tizen (embedded Linux)</span><span class="chip">KASAN</span><span class="chip">AddressSanitizer</span><span class="chip">Memory profiling</span><span class="chip">Leak &amp; crash analysis</span><span class="chip">Call-stack / core-dump triage</span><span class="chip">Serial &amp; UART logs</span><span class="chip">EVK boards</span><span class="chip">RPM packages</span></div></div>
-      <div class="panel skill"><h3>Programming</h3><div class="chips">
-        <span class="chip">Python</span><span class="chip">Java</span><span class="chip">JavaScript</span><span class="chip">Bash</span><span class="chip">MATLAB</span><span class="chip">Git</span><span class="chip">Perforce (P4)</span><span class="chip">Docker</span><span class="chip learn">C++ for ROS 2 (learning)</span></div></div>
-      <div class="panel skill"><h3>Vision &amp; ML</h3><div class="chips">
-        <span class="chip">OpenCV</span><span class="chip">OCR (EasyOCR)</span><span class="chip">scikit-learn</span><span class="chip">TensorFlow / Keras</span><span class="chip">Reinforcement learning</span><span class="chip">Fuzzy logic &amp; MCDM</span></div></div>
-      <div class="panel skill"><h3>Testing &amp; release</h3><div class="chips">
-        <span class="chip">Release management</span><span class="chip">Hotfix integration</span><span class="chip">Regression &amp; long-run tests</span><span class="chip">Test automation</span><span class="chip">Defect triage</span><span class="chip">Root cause analysis</span><span class="chip">Jira</span></div></div>
-      <div class="panel skill"><h3>Working style</h3><div class="chips">
-        <span class="chip">Delhi ↔ Korea HQ liaison</span><span class="chip">QA negotiation</span><span class="chip">Risk planning</span><span class="chip">Clear escalation</span><span class="chip">Mentoring 4 interns</span></div></div>
-    </div>
-  </section>
-
-  <!-- SAMSUNG -->
-  <section id="samsung">
-    <div class="sec-head"><div class="row"><span class="num">03</span><h2>Samsung R&amp;D: what I actually did</h2></div>
-      <p>Software Engineer, TV Product Group, Samsung R&amp;D Institute India – Delhi (Jul 2022 – Aug 2026, after a 6-month internship). Premium Smart TVs run Tizen, an embedded Linux OS, and ship to ATSC, DVB and ISDB regions. Each year had two halves: about 4 months getting new models ready for the factory, and about 8 months improving TVs already in people's homes through over-the-network updates.</p>
-    </div>
-
-    <div class="dark-band">
-      <h3>Where I worked in the firmware lifecycle</h3>
-      <svg class="pipeline" viewBox="0 0 1060 170" role="img" aria-label="Firmware lifecycle: feature kickoff, private image check, sanitizer and memory passes, regression and long-run tests, hotfix integration, factory release, updates over the network">
-        <defs><marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#35d0ba"/></marker></defs>
-        <g font-family="Inter,Arial" text-anchor="middle">
-          <g transform="translate(10 40)"><rect width="128" height="70" rx="12" fill="#132f44" stroke="#2a5068"/><text x="64" y="30" fill="#fff" font-size="13" font-weight="600">Feature</text><text x="64" y="48" fill="#fff" font-size="13" font-weight="600">kickoff</text><text x="64" y="64" fill="#93a6b4" font-size="10.5">200–300 features</text></g>
-          <g transform="translate(160 40)"><rect width="128" height="70" rx="12" fill="#132f44" stroke="#2a5068"/><text x="64" y="30" fill="#fff" font-size="13" font-weight="600">Private image</text><text x="64" y="48" fill="#fff" font-size="13" font-weight="600">check</text><text x="64" y="64" fill="#93a6b4" font-size="10.5">every fix, on a TV</text></g>
-          <g transform="translate(310 40)"><rect width="128" height="70" rx="12" fill="#0f3b3a" stroke="#35d0ba"/><text x="64" y="30" fill="#fff" font-size="13" font-weight="600">Sanitizer &amp;</text><text x="64" y="48" fill="#fff" font-size="13" font-weight="600">memory passes</text><text x="64" y="64" fill="#7fe3d3" font-size="10.5">KASAN · ASan · profiling</text></g>
-          <g transform="translate(460 40)"><rect width="128" height="70" rx="12" fill="#132f44" stroke="#2a5068"/><text x="64" y="30" fill="#fff" font-size="13" font-weight="600">Regression &amp;</text><text x="64" y="48" fill="#fff" font-size="13" font-weight="600">long-run tests</text><text x="64" y="64" fill="#93a6b4" font-size="10.5">deadlocks · timing</text></g>
-          <g transform="translate(610 40)"><rect width="128" height="70" rx="12" fill="#0f3b3a" stroke="#35d0ba"/><text x="64" y="30" fill="#fff" font-size="13" font-weight="600">Hotfix</text><text x="64" y="48" fill="#fff" font-size="13" font-weight="600">integration</text><text x="64" y="64" fill="#7fe3d3" font-size="10.5">Perforce changelists</text></g>
-          <g transform="translate(760 40)"><rect width="128" height="70" rx="12" fill="#0f3b3a" stroke="#35d0ba"/><text x="64" y="30" fill="#fff" font-size="13" font-weight="600">Factory</text><text x="64" y="48" fill="#fff" font-size="13" font-weight="600">release</text><text x="64" y="64" fill="#7fe3d3" font-size="10.5">5k–10k TVs per batch</text></g>
-          <g transform="translate(910 40)"><rect width="140" height="70" rx="12" fill="#132f44" stroke="#2a5068"/><text x="70" y="30" fill="#fff" font-size="13" font-weight="600">Updates to TVs</text><text x="70" y="48" fill="#fff" font-size="13" font-weight="600">in homes</text><text x="70" y="64" fill="#93a6b4" font-size="10.5">over-the-network</text></g>
-        </g>
-        <g stroke="#35d0ba" stroke-width="2" fill="none" class="flow">
-          <path d="M138 75H156" marker-end="url(#ar)"/><path d="M288 75H306" marker-end="url(#ar)"/><path d="M438 75H456" marker-end="url(#ar)"/><path d="M588 75H606" marker-end="url(#ar)"/><path d="M738 75H756" marker-end="url(#ar)"/><path d="M888 75H906" marker-end="url(#ar)"/>
-        </g>
-        <path d="M980 112 V140 H224 V114" fill="none" stroke="#f2a541" stroke-width="1.5" stroke-dasharray="4 5" marker-end="url(#ar)"/>
-        <text x="600" y="160" fill="#f2a541" font-family="Inter,Arial" font-size="11" text-anchor="middle">post-market rounds: the released image becomes the base for the next fixes</text>
-        <text x="10" y="22" fill="#93a6b4" font-family="Inter,Arial" font-size="11">Teal boxes = where I spent most of my time</text>
-      </svg>
-    </div>
-
-    <div class="sam-grid">
-      <div class="panel">
-        <h3><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6v6H9zM9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 14h3M1 9h3M1 14h3"/></svg></span>Kernel &amp; memory debugging</h3>
-        <ol>
-          <li>Flash a KASAN / AddressSanitizer image onto the TV or EVK board (it runs very slowly).</li>
-          <li>Drive real actions: HDMI plug and unplug, volume, app launches like Netflix.</li>
-          <li>Watch kernel logs for "tainted" and error reports, and capture logs at the moment of failure.</li>
-          <li>Match each report to the physical action that caused it, then raise a defect with logs for the developer.</li>
-        </ol>
-        <div class="kv"><span>heap-use-after-free</span><span>buffer overflow</span><span>memory leak</span><span>core dump</span></div>
-        <p class="honest">I ran the sanitizer images and triaged from the logs. The developers wrote the code fixes.</p>
-      </div>
-      <div class="panel">
-        <h3><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg></span>Memory &amp; performance</h3>
-        <ul>
-          <li>Memory profiling of every binary before a release went to market.</li>
-          <li>Package dependency analysis on the display Linux package to cut memory footprint on low-RAM models.</li>
-          <li>Worked on a daemon that watches CPU, flash and RAM use of every process and cleans up on excessive use.</li>
-          <li>Boot time and power trade-offs against UI lag and responsiveness, measured per process in milliseconds against spec.</li>
-        </ul>
-      </div>
-      <div class="panel">
-        <h3><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 17l6-6-6-6M12 19h8"/></svg></span>Logs &amp; new hardware</h3>
-        <ul>
-          <li>Read serial and UART logs from performance images to narrow problems down to OS level.</li>
-          <li>Validation started from scratch on buggy vendor EVK boards that crashed from day one.</li>
-          <li>When 16 EVK boards overheated and went black, I worked with the HQ hardware team to find the cause and get them back.</li>
-          <li>Planned and justified test-unit allocation across QA, product and developers.</li>
-        </ul>
-      </div>
-      <div class="panel">
-        <h3><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="6" cy="6" r="2"/><circle cx="6" cy="18" r="2"/><circle cx="18" cy="12" r="2"/><path d="M6 8v8M8 6h4a4 4 0 0 1 4 4v0M8 18h4a4 4 0 0 0 4-4"/></svg></span>Release &amp; hotfix engineering</h3>
-        <ul>
-          <li>Built full and hotfix firmware images in Perforce and cherry-picked changelists into release images.</li>
-          <li>Never accepted a fix blind: built a private image, tested it on a TV, and sent it back with video and logs if it failed.</li>
-          <li>For risky fixes, built two images, one with the fix and one without, and shipped only once the side effect was ruled out. Example: an audio-driver fix that could make the volume UI disappear.</li>
-          <li>350+ fixes across 5 chipsets, 95% within target schedule.</li>
-        </ul>
-      </div>
-      <div class="panel">
-        <h3><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 2 3h10a2 2 0 0 0 2-3l-5-9V3"/></svg></span>Test infrastructure</h3>
-        <ul>
-          <li>Long-run suites that simulate real use and catch CPU deadlocks on 4-core hardware.</li>
-          <li>Remote multi-device testbed for long-run and field tests on many TVs at once.</li>
-          <li>Long user paths scripted as command sequences (Netflix → YouTube → HDMI → volume → SmartThings), not pressed by hand on a remote.</li>
-          <li>Python tools over serial: pre-production checks, changelist checks from firmware XML, hotfix data validation.</li>
-        </ul>
-      </div>
-      <div class="panel">
-        <h3><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="10" r="2.5"/><path d="M3 20c0-3 3-5 6-5s6 2 6 5M14 20c0-2 1.5-3.5 3.5-3.5S21 18 21 20"/></svg></span>People &amp; coordination</h3>
-        <ul>
-          <li>Main link between the Delhi product team and QA, and between Delhi and Samsung HQ in Korea.</li>
-          <li>Negotiated test-round counts and which fixes moved to a later round.</li>
-          <li>Coordinated field testers in five regions, and planned test schedules around Diwali and Chuseok.</li>
-          <li>Mentored 4 interns on memory profiling, leak detection, sanitizer images and log analysis.</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="stories">
-      <article class="story">
-        <span class="tag">Ownership</span>
-        <h3>A full TV launch, run alone</h3>
-        <p>A North American model for the Black Friday sale. Product validation and release normally takes 3–4 engineers; I ran it on my own: QA meetings, sanitizer and memory passes, and holiday-risk planning.</p>
-        <p>After the October holidays, critical boot-time and UI-performance defects were still open and beyond my authority. I took them to the HQ product manager, so HQ QA could decide whether to change the spec or accept them.</p>
-        <div class="result">Shipped on time for Black Friday.</div>
-      </article>
-      <article class="story">
-        <span class="tag">Attention to detail</span>
-        <h3>The last-day catch</h3>
-        <p>On the final factory-image day, a developer's build had the right changes but used an outdated configuration data file. I spotted it from the file name as soon as the file appeared.</p>
-        <p>The fix landed in about 2 hours and I rebuilt the factory images in the next 2–3. I opened a group chat with HQ to find the root cause: one wrong file name in one section.</p>
-        <div class="result">No bad firmware reached the factory, and the deadline held.</div>
-      </article>
-      <article class="story">
-        <span class="tag">Judgement</span>
-        <h3>A China release, solo</h3>
-        <p>A 5–6 week release for an Android-on-Tizen chipset for the Chinese market. I set up the project, drove the QA meetings and decided with developers which changelists belonged in the build.</p>
-        <p>Many changes were shared across chipsets. I kept out a home-screen UI fix that was correct elsewhere but wrong for the different Chinese UI.</p>
-        <div class="result">Hit the factory date, so mass production started on time.</div>
-      </article>
-    </div>
-  </section>
-
-  <!-- SLAM LAB -->
-  <section id="lab">
-    <div class="sec-head"><div class="row"><span class="num">04</span><h2>SLAM lab: TortoiseBot</h2></div>
-      <p>IIT Delhi Executive Programme in Robotics, Mar–Sep 2025. I assembled a TortoiseBot (8&nbsp;GB Raspberry Pi, YDLiDAR S2, IMU, motor driver, Pi camera), brought it up over SSH, and ran teleoperation, Cartographer mapping and Nav2 navigation in ROS. Every image below is a real screenshot from my own runs.</p>
-    </div>
-
-    <div class="lab-top">
-      <div class="video-card">
-        <video controls preload="none" poster="slam-rviz-bug-poster.jpg" playsinline>
-          <source src="slam-rviz-bug.mp4" type="video/mp4">
-        </video>
-        <div class="cap"><b>Screen recording, 2 Aug 2025.</b> Driving the robot from the keyboard (left) while RViz shows LiDAR points piling up in rings. Old points stayed on screen and showed up as fake obstacles along the robot's path. I tracked this defect down and fixed it.</div>
-      </div>
-      <div class="panel">
-        <h3><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 3v9l6 3"/></svg></span>What I did</h3>
-        <ul>
-          <li>Full hardware assembly and wiring of LiDAR, IMU, camera and motor driver.</li>
-          <li>Robot bring-up and teleoperation over SSH from the laptop.</li>
-          <li>Occupancy-grid mapping with Cartographer, and autonomous navigation with Nav2.</li>
-          <li>Fixed build conflicts between the Nav2, Cartographer and BehaviorTree packages.</li>
-          <li>Used rqt_graph and TF views to check that every node and frame was connected.</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="strip" aria-label="Map snapshots">
-      <figure><img src="map-step-1.jpg" alt="Early Cartographer map: a narrow corridor" data-cap="Mapping run, 23 Aug 2025: a corridor appears as the robot drives"><figcaption>run 1 · corridor</figcaption></figure>
-      <figure><img src="map-step-2.jpg" alt="Cartographer map extending into a larger area" data-cap="Mapping run, 23 Aug 2025: the map extends as the robot explores"><figcaption>run 2 · exploring</figcaption></figure>
-      <figure><img src="map-step-3.jpg" alt="Cartographer map with walls and obstacles" data-cap="Mapping run: walls (black) and free space (grey)"><figcaption>run 3 · walls</figcaption></figure>
-      <figure><img src="map-step-4.jpg" alt="Detailed Cartographer map, zoomed" data-cap="Mapping run: zoomed-in occupancy grid"><figcaption>run 4 · detail</figcaption></figure>
-      <figure><img src="map-step-5.jpg" alt="Larger Cartographer map of the full area" data-cap="Mapping run: the larger area mapped"><figcaption>run 5 · full area</figcaption></figure>
-    </div>
-
-    <div class="gallery">
-      <figure class="shot"><img src="slam-bringup.jpg" alt="Terminal showing TortoiseBot bring-up logs" data-cap="Robot bring-up over SSH: LiDAR, camera and firmware nodes starting"><figcaption><b>Bring-up.</b> LiDAR, camera and firmware nodes starting on the robot over SSH.</figcaption></figure>
-      <figure class="shot"><img src="slam-teleop-mapping.jpg" alt="RViz map with teleoperation terminal" data-cap="Teleoperation from the keyboard while the map builds in RViz"><figcaption><b>Teleop + mapping.</b> Driving from the keyboard while Cartographer builds the map.</figcaption></figure>
-      <figure class="shot"><img src="slam-rqt-graph.jpg" alt="rqt_graph showing ROS nodes and topics" data-cap="rqt_graph: teleop → /cmd_vel → differential drive, and the camera pipeline"><figcaption><b>Node graph.</b> teleop → /cmd_vel → drive, plus the camera pipeline.</figcaption></figure>
-      <figure class="shot"><img src="slam-tf-rviz.jpg" alt="RViz showing TF frames and laser scan" data-cap="RViz with TF frames and the live laser scan"><figcaption><b>TF frames.</b> Checking frames and the live laser scan in RViz.</figcaption></figure>
-      <figure class="shot"><img src="slam-map-full.jpg" alt="Full RViz window with a large occupancy grid map" data-cap="A larger occupancy grid built with Cartographer"><figcaption><b>Occupancy grid.</b> A larger map built from several minutes of driving.</figcaption></figure>
-      <figure class="shot"><img src="map-step-3.jpg" alt="Close-up of mapped walls" data-cap="Close-up: walls and free space"><figcaption><b>Close-up.</b> Walls in black, free space in grey, laser rays at the edges.</figcaption></figure>
-    </div>
-  </section>
-
   <!-- PROJECTS -->
   <section id="projects">
-    <div class="sec-head"><div class="row"><span class="num">05</span><h2>Projects</h2></div></div>
+    <div class="sec-head"><div class="row"><span class="num">02</span><h2>Projects</h2></div></div>
     <div class="projects">
+      <article class="proj feature">
+        <div class="art"><img class="photo" src="rsdp-blocks.jpg" alt="Coloured wooden blocks (cubes, cuboids, a cylinder, a prism and an arch) used as target objects in the Leo Rover project" loading="lazy"></div>
+        <div class="body">
+          <span class="meta">MSc team project · 2026–27 <span class="status">In progress</span></span>
+          <h3>Leo Rover: colour-sorting robot</h3>
+          <p>Team 7 is building a rover that searches an area on its own, picks up coloured blocks with a myCobot arm and drops each one in the matching bin. My part is vision: finding the blocks with the RealSense colour camera and measuring their 3D position with its depth sensor.</p>
+          <p><b>First tests (Oct 2026)</b></p>
+          <ul class="prog">
+            <li>Brought up the RPLidar and the RealSense D435 on the rover, and viewed the lidar scan live in RViz from a laptop.</li>
+            <li>Full-size depth video (848×480, 30 fps) reached only about 5–7 fps on the rover's Raspberry Pi, so vision processing should run on the on-board Intel NUC.</li>
+            <li>YOLO11n on a laptop CPU took about 95 ms per frame. The pretrained model called our red block a "hot dog", and a model I trained on a public, top-down block dataset found almost nothing from a side view. Next: training on our own low-angle images.</li>
+          </ul>
+          <div class="tags"><span class="tag">ROS 2 Jazzy</span><span class="tag">RealSense D435</span><span class="tag">RPLidar</span><span class="tag">YOLO11</span><span class="tag">OpenCV</span><span class="tag">myCobot 280</span></div>
+          <a class="more" href="https://github.com/UoMMScRobotics/UOMDocumentationForLeoRover" target="_blank" rel="noopener">Platform docs (UoM) →</a>
+        </div>
+      </article>
 
       <article class="proj">
         <div class="art"><img src="map-step-5.jpg" alt="Occupancy grid map from the TortoiseBot"></div>
         <div class="body">
           <span class="meta">IIT Delhi · Mar–Sep 2025</span>
           <h3>SLAM with a TortoiseBot</h3>
-          <p>Built the robot from parts and got mapping and autonomous navigation working in ROS, including fixing the LiDAR "ghost points" bug shown in the video above.</p>
-          <div class="tags"><span class="tag">ROS</span><span class="tag">Nav2</span><span class="tag">Cartographer</span><span class="tag">LiDAR</span></div>
-          <a class="more" href="#lab">See the lab →</a>
+          <p>Built the robot from parts and got mapping and autonomous navigation working in ROS&nbsp;2, including fixing the LiDAR "ghost points" bug shown in the video below.</p>
+          <div class="tags"><span class="tag">ROS 2</span><span class="tag">Nav2</span><span class="tag">Cartographer</span><span class="tag">LiDAR</span></div>
+          <a class="more" href="#lab">See the lab ↓</a>
         </div>
       </article>
 
@@ -486,33 +353,32 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
         <div class="art" aria-hidden="true">
           <svg viewBox="0 0 320 200">
             <rect width="320" height="200" fill="#0b1f2e"/>
-            <rect x="0" y="150" width="320" height="50" fill="#102a3c"/>
-            <rect x="34" y="128" width="22" height="22" rx="3" fill="#e5484d"/>
-            <rect x="66" y="132" width="18" height="18" rx="3" fill="#3e9cf2"/>
-            <rect x="92" y="130" width="20" height="20" rx="3" fill="#46c36b"/>
-            <g transform="translate(150 96)">
-              <rect x="0" y="22" width="78" height="30" rx="6" fill="#c9d6df"/>
-              <circle cx="14" cy="56" r="11" fill="#22384a" stroke="#c9d6df" stroke-width="3"/>
-              <circle cx="64" cy="56" r="11" fill="#22384a" stroke="#c9d6df" stroke-width="3"/>
-              <rect x="56" y="10" width="18" height="12" rx="2" fill="#35d0ba"/>
-              <circle cx="65" cy="16" r="3" fill="#0b1f2e"/>
-              <path d="M20 22 L14 -10 L-18 -4" fill="none" stroke="#f2a541" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M-18 -4 l-6 8 M-18 -4 l-8 -4" stroke="#f2a541" stroke-width="3" stroke-linecap="round"/>
-            </g>
-            <path d="M215 112 L120 132" stroke="#35d0ba" stroke-width="1.5" stroke-dasharray="4 4"/>
-            <path d="M215 112 L80 140" stroke="#35d0ba" stroke-width="1.5" stroke-dasharray="4 4" opacity=".6"/>
-            <g transform="translate(250 112)">
-              <path d="M0 0 h18 l-3 38 h-12z" fill="#e5484d"/><path d="M22 0 h18 l-3 38 h-12z" fill="#3e9cf2"/><path d="M44 0 h18 l-3 38 h-12z" fill="#46c36b"/>
-            </g>
-            <text x="12" y="24" fill="#6f8798" font-family="monospace" font-size="10">see colour → find in 3D → grasp → bin</text>
+            <rect x="0" y="0" width="160" height="200" fill="#10283a"/>
+            <circle cx="40" cy="38" r="14" fill="#f2a541"/>
+            <g stroke="#f2a541" stroke-width="2"><path d="M40 16v-6M40 66v-6M18 38h-6M68 38h-6M24 22l-4-4M60 58l-4-4M56 22l4-4M20 58l4-4"/></g>
+            <path d="M280 30 a14 14 0 1 0 10 24 a11 11 0 1 1 -10 -24z" fill="#c9d6df"/>
+            <path d="M30 160 C80 120 120 140 160 110 S250 70 295 90" fill="none" stroke="#c9d6df" stroke-width="2.5"/>
+            <path class="draw" d="M30 160 C82 126 118 150 162 118 S246 88 295 112" fill="none" stroke="#35d0ba" stroke-width="2.5" stroke-dasharray="5 5"/>
+            <g stroke="#e5484d" stroke-width="1.2" opacity=".8"><path d="M200 99v12M240 86v14M280 89v20"/></g>
+            <text x="12" y="190" fill="#6f8798" font-family="monospace" font-size="10">ground truth vs estimate · ATE / RPE</text>
           </svg>
         </div>
         <div class="body">
-          <span class="meta">MSc team project · 2026–27 <span class="status">In progress</span></span>
-          <h3>Leo Rover: colour-sorting robot</h3>
-          <p>Team 7 is building a rover that finds coloured objects on its own, picks them up with a myCobot arm and drops each one in the matching bin. My part is vision: colour detection with RGB and 3D position from the RealSense depth camera.</p>
-          <div class="tags"><span class="tag">ROS 2 Jazzy</span><span class="tag">RealSense</span><span class="tag">RPLidar</span><span class="tag">myCobot 280</span><span class="tag">OpenCV</span></div>
-          <a class="more" href="https://github.com/UoMMScRobotics/UOMDocumentationForLeoRover" target="_blank" rel="noopener">Platform docs (UoM) →</a>
+          <span class="meta">Independent research <span class="status">Planned</span></span>
+          <h3>Does SLAM survive the lights going down?</h3>
+          <p>A planned study of how SLAM accuracy changes from bright to dim light, on my TortoiseBot. The plan is to measure trajectory error (ATE/RPE) with evo, with five runs per lighting level to get error bars.</p>
+          <div class="tags"><span class="tag">SLAM</span><span class="tag">evo</span><span class="tag">Experiment design</span></div>
+        </div>
+      </article>
+
+      <article class="proj">
+        <div class="art"><img src="cert-esi-qatar.jpg" alt="Certificate of participation, ESI 2025, Qatar University" style="object-fit:cover;object-position:center 35%"></div>
+        <div class="body">
+          <span class="meta">Research · ESI 2025, Qatar University</span>
+          <h3>Hybrid ML + decision-making ranking</h3>
+          <p>Combined Random Forest and Gradient Boosting with three ranking methods (VIKOR, MOORA, EDAS) to rank Jharkhand districts for sustainable mining. All three methods gave similar rankings. I presented it in Doha in November 2025.</p>
+          <div class="tags"><span class="tag">scikit-learn</span><span class="tag">MCDM</span><span class="tag">Conference talk</span></div>
+          <a class="more" href="#publications">See papers →</a>
         </div>
       </article>
 
@@ -539,7 +405,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
         <div class="body">
           <span class="meta">Samsung R&amp;D · Python</span>
           <h3>Factory firmware registration automation</h3>
-          <p>Each firmware set (12–26&nbsp;GB) had to be registered by hand for the factory: about 20–25 minutes each, 6–7 per engineer, and one mistake could scrap a batch of 5,000–10,000 TVs. I built an OCR + OpenCV + PyAutoGUI uploader that runs unattended overnight, plus a separate checker that proves every image is byte-identical to the repository copy by checksum.</p>
+          <p>Each firmware set (12–26&nbsp;GB) had to be registered by hand for the factory: about 20–25 minutes each, 6–7 per engineer, and one mistake could put a factory batch of 5,000–10,000 TVs at risk. I built an OCR + OpenCV + PyAutoGUI uploader that runs unattended overnight, plus a separate checker that compares each image with the repository copy by checksum.</p>
           <p>It was adopted across the TV Product Group and caught colleagues' errors before they reached the factory. I later led three interns who added a React front-end.</p>
           <div class="tags"><span class="tag">Python</span><span class="tag">OpenCV</span><span class="tag">OCR</span><span class="tag">PyAutoGUI</span><span class="tag">Checksums</span></div>
         </div>
@@ -565,39 +431,153 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
         </div>
       </article>
 
-      <article class="proj">
-        <div class="art" aria-hidden="true">
-          <svg viewBox="0 0 320 200">
-            <rect width="320" height="200" fill="#0b1f2e"/>
-            <rect x="0" y="0" width="160" height="200" fill="#10283a"/>
-            <circle cx="40" cy="38" r="14" fill="#f2a541"/>
-            <g stroke="#f2a541" stroke-width="2"><path d="M40 16v-6M40 66v-6M18 38h-6M68 38h-6M24 22l-4-4M60 58l-4-4M56 22l4-4M20 58l4-4"/></g>
-            <path d="M280 30 a14 14 0 1 0 10 24 a11 11 0 1 1 -10 -24z" fill="#c9d6df"/>
-            <path d="M30 160 C80 120 120 140 160 110 S250 70 295 90" fill="none" stroke="#c9d6df" stroke-width="2.5"/>
-            <path class="draw" d="M30 160 C82 126 118 150 162 118 S246 88 295 112" fill="none" stroke="#35d0ba" stroke-width="2.5" stroke-dasharray="5 5"/>
-            <g stroke="#e5484d" stroke-width="1.2" opacity=".8"><path d="M200 99v12M240 86v14M280 89v20"/></g>
-            <text x="12" y="190" fill="#6f8798" font-family="monospace" font-size="10">ground truth vs estimate · ATE / RPE</text>
-          </svg>
-        </div>
-        <div class="body">
-          <span class="meta">Independent research <span class="status">In progress</span></span>
-          <h3>Does SLAM survive the lights going down?</h3>
-          <p>A study of how SLAM accuracy changes from bright to dim lighting, on my TortoiseBot with slam_toolbox. The plan is to measure trajectory error (ATE/RPE) with evo, with five runs for each lighting level to get error bars.</p>
-          <div class="tags"><span class="tag">slam_toolbox</span><span class="tag">evo</span><span class="tag">Experiment design</span></div>
-        </div>
-      </article>
+    </div>
+  </section>
 
-      <article class="proj">
-        <div class="art"><img src="cert-esi-qatar.jpg" alt="Certificate of participation, ESI 2025, Qatar University" style="object-fit:cover;object-position:center 35%"></div>
-        <div class="body">
-          <span class="meta">Research · ESI 2025, Qatar University</span>
-          <h3>Hybrid ML + decision-making ranking</h3>
-          <p>Combined Random Forest and Gradient Boosting with three ranking methods (VIKOR, MOORA, EDAS) to rank Jharkhand districts for sustainable mining. All three gave similar rankings, which supports the result. I presented it in Doha in November 2025.</p>
-          <div class="tags"><span class="tag">scikit-learn</span><span class="tag">MCDM</span><span class="tag">Conference talk</span></div>
-          <a class="more" href="#publications">See papers →</a>
-        </div>
-      </article>
+  <!-- SLAM LAB -->
+  <section id="lab">
+    <div class="sec-head"><div class="row"><span class="num">03</span><h2>SLAM lab: TortoiseBot</h2></div>
+      <p>IIT Delhi Executive Programme in Robotics, Mar–Sep 2025. I assembled a TortoiseBot (8&nbsp;GB Raspberry Pi, YDLiDAR S2, IMU, motor driver, Pi camera), brought it up over SSH, and ran teleoperation, Cartographer mapping and Nav2 navigation in ROS&nbsp;2. Every image below is a real screenshot from my own runs. TortoiseBot kit and base software by RigBetel Labs.</p>
+    </div>
 
+    <div class="lab-top">
+      <div class="video-card">
+        <video controls preload="none" poster="slam-rviz-bug-poster.jpg" playsinline>
+          <source src="slam-rviz-bug.mp4" type="video/mp4">
+          <source src="slam-rviz-bug.webm" type="video/webm">
+        </video>
+        <div class="cap"><b>Screen recording, 2 Aug 2025.</b> Driving the robot from the keyboard (left) while RViz shows LiDAR points piling up in rings. Old points stayed on screen and showed up as fake obstacles along the robot's path. I tracked this defect down and fixed it.</div>
+      </div>
+      <div class="panel">
+        <h3><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 3v9l6 3"/></svg></span>What I did</h3>
+        <ul>
+          <li>Full hardware assembly and wiring of LiDAR, IMU, camera and motor driver.</li>
+          <li>Robot bring-up and teleoperation over SSH from the laptop.</li>
+          <li>Occupancy-grid mapping with Cartographer, and autonomous navigation with Nav2.</li>
+          <li>Fixed build conflicts between the Nav2, Cartographer and BehaviorTree packages.</li>
+          <li>Used rqt_graph and TF views to check that every node and frame was connected.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="strip" aria-label="Map snapshots">
+      <figure><img src="map-step-1.jpg" alt="Early Cartographer map: a narrow corridor" data-cap="Mapping run, 23 Aug 2025: a corridor appears as the robot drives"><figcaption>run 1 · corridor</figcaption></figure>
+      <figure><img src="map-step-3.jpg" alt="Cartographer map with walls and obstacles" data-cap="Mapping run: walls (black) and free space (grey)"><figcaption>run 3 · walls</figcaption></figure>
+      <figure><img src="map-step-5.jpg" alt="Larger Cartographer map of the full area" data-cap="Mapping run: the larger area mapped"><figcaption>run 5 · full area</figcaption></figure>
+    </div>
+
+    <div class="gallery">
+      <figure class="shot"><img src="slam-bringup.jpg" alt="Terminal showing TortoiseBot bring-up logs" data-cap="Robot bring-up over SSH: LiDAR, camera and firmware nodes starting"><figcaption><b>Bring-up.</b> LiDAR, camera and firmware nodes starting on the robot over SSH.</figcaption></figure>
+      <figure class="shot"><img src="slam-teleop-mapping.jpg" alt="RViz map with teleoperation terminal" data-cap="Teleoperation from the keyboard while the map builds in RViz"><figcaption><b>Teleop + mapping.</b> Driving from the keyboard while Cartographer builds the map.</figcaption></figure>
+      <figure class="shot"><img src="slam-rqt-graph.jpg" alt="rqt_graph showing ROS nodes and topics" data-cap="rqt_graph: teleop → /cmd_vel → differential drive, and the camera pipeline"><figcaption><b>Node graph.</b> teleop → /cmd_vel → drive, plus the camera pipeline.</figcaption></figure>
+      <figure class="shot"><img src="slam-tf-rviz.jpg" alt="RViz showing TF frames and laser scan" data-cap="RViz with TF frames and the live laser scan"><figcaption><b>TF frames.</b> Checking frames and the live laser scan in RViz.</figcaption></figure>
+      <figure class="shot"><img src="slam-map-full.jpg" alt="Full RViz window with a large occupancy grid map" data-cap="A larger occupancy grid built with Cartographer"><figcaption><b>Occupancy grid.</b> A larger map built from several minutes of driving.</figcaption></figure>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="sec-head"><div class="row"><span class="num">04</span><h2>Skills</h2></div></div>
+    <div class="skills">
+      <div class="panel skill"><h3>Robotics</h3><div class="chips">
+        <span class="chip">ROS / ROS 2</span><span class="chip">Nav2</span><span class="chip">SLAM (Cartographer, slam_toolbox)</span><span class="chip">LiDAR</span><span class="chip">Intel RealSense</span><span class="chip">Sensor fusion</span><span class="chip">RViz</span><span class="chip">Gazebo</span><span class="chip">Behavior Trees</span></div></div>
+      <div class="panel skill"><h3>Embedded Linux &amp; debugging</h3><div class="chips">
+        <span class="chip">Tizen (embedded Linux)</span><span class="chip">KASAN</span><span class="chip">AddressSanitizer</span><span class="chip">Memory profiling</span><span class="chip">Leak &amp; crash analysis</span><span class="chip">Call-stack / core-dump triage</span><span class="chip">Serial &amp; UART logs</span><span class="chip">EVK boards</span><span class="chip">RPM packages</span></div></div>
+      <div class="panel skill"><h3>Programming</h3><div class="chips">
+        <span class="chip">Python</span><span class="chip">Java</span><span class="chip">JavaScript</span><span class="chip">Bash</span><span class="chip">MATLAB</span><span class="chip">Git</span><span class="chip">Perforce (P4)</span><span class="chip">Docker</span><span class="chip learn">C++ for ROS 2 (learning)</span></div></div>
+      <div class="panel skill"><h3>Vision &amp; ML</h3><div class="chips">
+        <span class="chip">OpenCV</span><span class="chip">OCR (EasyOCR)</span><span class="chip">scikit-learn</span><span class="chip">TensorFlow / Keras</span><span class="chip">Reinforcement learning (IISc course)</span><span class="chip">Fuzzy logic &amp; MCDM</span></div></div>
+      <div class="panel skill"><h3>Testing &amp; release</h3><div class="chips">
+        <span class="chip">Release management</span><span class="chip">Hotfix integration</span><span class="chip">Regression &amp; long-run tests</span><span class="chip">Test automation</span><span class="chip">Defect triage</span><span class="chip">Root cause analysis</span><span class="chip">Jira</span></div></div>
+      <div class="panel skill"><h3>Working style</h3><div class="chips">
+        <span class="chip">Delhi ↔ Korea HQ liaison</span><span class="chip">QA negotiation</span><span class="chip">Risk planning</span><span class="chip">Clear escalation</span><span class="chip">Mentoring 4 interns</span></div></div>
+    </div>
+  </section>
+
+  <!-- SAMSUNG -->
+  <section id="samsung">
+    <div class="sec-head"><div class="row"><span class="num">05</span><h2>Industry: embedded Linux, testing and release at Samsung R&amp;D</h2></div>
+      <p>Software Engineer, TV Product Group, Samsung R&amp;D Institute India – Delhi (Jul 2022 – Aug 2026, after a 6-month internship). Premium Smart TVs run Tizen, an embedded Linux OS, and ship to ATSC, DVB and ISDB regions. Each year had two phases: about 4 months getting new models ready for the factory, and about 8 months improving TVs already in people's homes through over-the-network updates.</p>
+    </div>
+
+    <div class="dark-band">
+      <h3>Where I worked in the firmware lifecycle</h3>
+      <svg class="pipeline" viewBox="0 0 1060 170" role="img" aria-label="Firmware lifecycle: feature kickoff, private image check, sanitizer and memory passes, regression and long-run tests, hotfix integration, factory release, updates over the network">
+        <defs><marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#35d0ba"/></marker></defs>
+        <g font-family="Inter,Arial" text-anchor="middle">
+          <g transform="translate(10 40)"><rect width="128" height="70" rx="12" fill="#132f44" stroke="#2a5068"/><text x="64" y="30" fill="#fff" font-size="13" font-weight="600">Feature</text><text x="64" y="48" fill="#fff" font-size="13" font-weight="600">kickoff</text><text x="64" y="64" fill="#93a6b4" font-size="12">200–300 features</text></g>
+          <g transform="translate(160 40)"><rect width="128" height="70" rx="12" fill="#132f44" stroke="#2a5068"/><text x="64" y="30" fill="#fff" font-size="13" font-weight="600">Private image</text><text x="64" y="48" fill="#fff" font-size="13" font-weight="600">check</text><text x="64" y="64" fill="#93a6b4" font-size="12">every fix, on a TV</text></g>
+          <g transform="translate(310 40)"><rect width="128" height="70" rx="12" fill="#0f3b3a" stroke="#35d0ba"/><text x="64" y="30" fill="#fff" font-size="13" font-weight="600">Sanitizer &amp;</text><text x="64" y="48" fill="#fff" font-size="13" font-weight="600">memory passes</text><text x="64" y="64" fill="#7fe3d3" font-size="12">KASAN · ASan · profiling</text></g>
+          <g transform="translate(460 40)"><rect width="128" height="70" rx="12" fill="#132f44" stroke="#2a5068"/><text x="64" y="30" fill="#fff" font-size="13" font-weight="600">Regression &amp;</text><text x="64" y="48" fill="#fff" font-size="13" font-weight="600">long-run tests</text><text x="64" y="64" fill="#93a6b4" font-size="12">deadlocks · timing</text></g>
+          <g transform="translate(610 40)"><rect width="128" height="70" rx="12" fill="#0f3b3a" stroke="#35d0ba"/><text x="64" y="30" fill="#fff" font-size="13" font-weight="600">Hotfix</text><text x="64" y="48" fill="#fff" font-size="13" font-weight="600">integration</text><text x="64" y="64" fill="#7fe3d3" font-size="12">Perforce changelists</text></g>
+          <g transform="translate(760 40)"><rect width="128" height="70" rx="12" fill="#0f3b3a" stroke="#35d0ba"/><text x="64" y="30" fill="#fff" font-size="13" font-weight="600">Factory</text><text x="64" y="48" fill="#fff" font-size="13" font-weight="600">release</text><text x="64" y="64" fill="#7fe3d3" font-size="12">5k–10k TVs per batch</text></g>
+          <g transform="translate(910 40)"><rect width="140" height="70" rx="12" fill="#132f44" stroke="#2a5068"/><text x="70" y="30" fill="#fff" font-size="13" font-weight="600">Updates to TVs</text><text x="70" y="48" fill="#fff" font-size="13" font-weight="600">in homes</text><text x="70" y="64" fill="#93a6b4" font-size="12">over-the-network</text></g>
+        </g>
+        <g stroke="#35d0ba" stroke-width="2" fill="none" class="flow">
+          <path d="M138 75H156" marker-end="url(#ar)"/><path d="M288 75H306" marker-end="url(#ar)"/><path d="M438 75H456" marker-end="url(#ar)"/><path d="M588 75H606" marker-end="url(#ar)"/><path d="M738 75H756" marker-end="url(#ar)"/><path d="M888 75H906" marker-end="url(#ar)"/>
+        </g>
+        <path d="M980 112 V140 H224 V114" fill="none" stroke="#f2a541" stroke-width="1.5" stroke-dasharray="4 5" marker-end="url(#ar)"/>
+        <text x="600" y="160" fill="#f2a541" font-family="Inter,Arial" font-size="11" text-anchor="middle">post-market rounds: the released image becomes the base for the next fixes</text>
+        <text x="10" y="22" fill="#93a6b4" font-family="Inter,Arial" font-size="11">Teal boxes = where I spent most of my time</text>
+      </svg>
+    </div>
+
+    <div class="sam-grid">
+      <div class="panel">
+        <h3><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6v6H9zM9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 14h3M1 9h3M1 14h3"/></svg></span>Kernel &amp; memory debugging</h3>
+        <ol>
+          <li>Flash a KASAN / AddressSanitizer image onto the TV or EVK board (it runs very slowly).</li>
+          <li>Drive real actions: HDMI plug and unplug, volume, app launches like Netflix.</li>
+          <li>Watch kernel logs for "tainted" and error reports, and capture logs at the moment of failure.</li>
+          <li>Match each report to the physical action that caused it, then raise a defect with logs for the developer.</li>
+        </ol>
+        <div class="kv"><span>heap-use-after-free</span><span>buffer overflow</span><span>memory leak</span><span>core dump</span></div>
+        <p class="honest">On TV firmware, I ran the sanitizer images and triaged from the logs; the developers wrote the code fixes. The tools I wrote myself are under <a href="#projects">Projects</a>.</p>
+      </div>
+      <div class="panel">
+        <h3><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="6" cy="6" r="2"/><circle cx="6" cy="18" r="2"/><circle cx="18" cy="12" r="2"/><path d="M6 8v8M8 6h4a4 4 0 0 1 4 4v0M8 18h4a4 4 0 0 0 4-4"/></svg></span>Release &amp; hotfix engineering</h3>
+        <ul>
+          <li>Built full and hotfix firmware images in Perforce and cherry-picked changelists into release images.</li>
+          <li>Checked fixes on a private image on a real TV before accepting them, and sent failures back with video and logs.</li>
+          <li>For risky fixes, built two images, one with the fix and one without, and shipped only once the side effect was ruled out. Example: an audio-driver fix with a possible side effect on the UI.</li>
+          <li>Memory profiling before market releases, and package-dependency analysis to cut memory use on low-RAM models.</li>
+          <li>350+ fixes across 5 chipsets, 95% within target schedule.</li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h3><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 2 3h10a2 2 0 0 0 2-3l-5-9V3"/></svg></span>Test tools &amp; coordination</h3>
+        <ul>
+          <li>Long-run suites that catch CPU deadlocks on 4-core hardware, and a remote testbed for many TVs at once.</li>
+          <li>Python tools over serial for pre-production checks and changelist checks from firmware XML.</li>
+          <li>Validation on new vendor EVK boards, including working with the HQ hardware team when a batch of boards overheated and shut down.</li>
+          <li>Main link between the Delhi team, QA and Samsung HQ in Korea; coordinated field testers in five regions.</li>
+          <li>Mentored 4 interns on memory profiling, sanitizer images and log analysis.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="stories">
+      <article class="story">
+        <span class="tag">Ownership</span>
+        <h3>Validation and release for a North American TV model</h3>
+        <p>A model for the Black Friday sale. Validation and release usually involves 3–4 engineers; I coordinated it on my own: QA meetings, sanitizer and memory passes, and holiday-risk planning.</p>
+        <p>After the October holidays, critical boot-time and UI-performance defects were still open and beyond my authority. I took them to the HQ product manager, so HQ QA could decide whether to change the spec or accept them.</p>
+        <div class="result">Shipped on time for Black Friday.</div>
+      </article>
+      <article class="story">
+        <span class="tag">Attention to detail</span>
+        <h3>The last-day catch</h3>
+        <p>On the final factory-image day, a developer's build had the right changes but used an outdated configuration data file. I spotted it from the file name as soon as the file appeared.</p>
+        <p>The fix landed in about 2 hours and I rebuilt the factory images in the next 2–3. I opened a group chat with HQ to find the root cause: one wrong file name in one section.</p>
+        <div class="result">The wrong file was caught before the factory images went out, and the deadline held.</div>
+      </article>
+      <article class="story">
+        <span class="tag">Judgement</span>
+        <h3>China-market firmware release</h3>
+        <p>A 5–6 week release for an Android-on-Tizen chipset for the Chinese market. I set up the project, drove the QA meetings and decided with developers which changelists belonged in the build.</p>
+        <p>Many changes were shared across chipsets. I kept out a home-screen UI fix that was correct elsewhere but wrong for the different Chinese UI.</p>
+        <div class="result">Hit the factory date, so mass production started on time.</div>
+      </article>
     </div>
   </section>
 
@@ -640,8 +620,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
         <div class="yrbox">2025<small>JOURNAL</small></div>
         <div>
           <h3>A Medical Diagnosis of Cataract Using Intuitionistic Fuzzy Sets</h3>
-          <div class="venue">Kaur, P. &amp; <b>Gupta, A. N.</b> · Risk Assessment and Management Decisions, 2(2), 88–94</div>
-          <p>A fuzzy-logic method that finds the most likely cause and type of cataract in patients over 40. Tested on 50 patients from Jharkhand, it found diabetes to be the leading cause.</p>
+          <div class="venue">Journal article · Kaur, P. &amp; <b>Gupta, A. N.</b> · Risk Assessment and Management Decisions, 2(2), 88–94</div>
+          <p>A case study using intuitionistic fuzzy sets to find the most likely cause and type of cataract in patients over 40. In data from 50 patients in Jharkhand, diabetes came out as the leading cause.</p>
           <div class="links"><a href="https://doi.org/10.48314/ramd.vi.63" target="_blank" rel="noopener">DOI: 10.48314/ramd.vi.63</a><a href="https://ramd.reapress.com/journal/article/view/63" target="_blank" rel="noopener">Read the paper →</a></div>
         </div>
       </div>
@@ -649,7 +629,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
         <img class="thumb" src="paper-icfbp-p1.jpg" alt="First page of the ICFBP 2025 paper" data-cap="First page, ICFBP 2025 proceedings, pp. 377–387">
         <div>
           <h3>Circular Economy (CE) Business Model Selection Using MCDM Methods MOORA and EDAS</h3>
-          <div class="venue">Kaur, P. &amp; <b>Gupta, A. N.</b> · Proc. 1st Int. Conf. on Future Business Perspectives (ICFBP 2025), Ho Chi Minh City, pp. 377–387 · ISBN 978-1-9193829-0-6</div>
+          <div class="venue">Conference paper · Kaur, P. &amp; <b>Gupta, A. N.</b> · Proc. 1st Int. Conf. on Future Business Perspectives (ICFBP 2025), Ho Chi Minh City, pp. 377–387 · ISBN 978-1-9193829-0-6</div>
           <p>Ranks 15 circular-economy practices with two decision-making methods. Both put reduce, reuse, remanufacture and recycle first, and a weight-sensitivity check confirms it.</p>
           <div class="links"><a href="ICFBP2025_Kaur_Gupta_CircularEconomy.pdf" target="_blank" rel="noopener">Paper (PDF) →</a></div>
         </div>
@@ -658,15 +638,15 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
         <img class="thumb" src="cert-esi-qatar.jpg" alt="ESI 2025 certificate of participation" data-cap="Certificate of participation, ESI 2025, Qatar University, 8–11 November 2025">
         <div>
           <h3>Applying Hybrid ML-MCDM Approaches for Ranking Jharkhand Districts for Sustainable Mining</h3>
-          <div class="venue">Kaur, P. &amp; <b>Gupta, A. N.</b> · 8th Int. Conf. on Entrepreneurship for Sustainability &amp; Impact (ESI 2025), Qatar University, Doha · Presented in person</div>
-          <p>Random Forest and Gradient Boosting combined with VIKOR, MOORA and EDAS. The three methods gave matching rankings.</p>
+          <div class="venue">Conference presentation · Kaur, P. &amp; <b>Gupta, A. N.</b> · 8th Int. Conf. on Entrepreneurship for Sustainability &amp; Impact (ESI 2025), Qatar University, Doha · Presented in person</div>
+          <p>Random Forest and Gradient Boosting combined with VIKOR, MOORA and EDAS. The three methods gave similar rankings.</p>
         </div>
       </div>
       <div class="panel pub">
         <div class="yrbox">2019<small>TALK</small></div>
         <div>
           <h3>A Comparative Analysis of a Multi-Objective Investment Selection Problem Using Fuzzy Logic</h3>
-          <div class="venue">Kaur, P. &amp; <b>Gupta, A. N.</b> · Int. Conf. on Operations Research and Decision Sciences, IIM Visakhapatnam · Presented</div>
+          <div class="venue">Conference presentation · Kaur, P. &amp; <b>Gupta, A. N.</b> · Int. Conf. on Operations Research and Decision Sciences, IIM Visakhapatnam, 2019 · Presented</div>
         </div>
       </div>
     </div>
@@ -674,7 +654,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
 
   <!-- CERTIFICATES -->
   <section id="certificates">
-    <div class="sec-head"><div class="row"><span class="num">08</span><h2>Courses &amp; certificates</h2></div><p>Click a certificate to enlarge it.</p></div>
+    <div class="sec-head"><div class="row"><span class="num">08</span><h2>Courses &amp; certificates</h2></div><p>Click a certificate image to enlarge it.</p></div>
     <div class="certs">
       <div class="cert"><div class="img"><img src="cert-iitd.jpg" alt="IIT Delhi certificate, Executive Programme in Robotics" data-cap="IIT Delhi, Executive Programme in Robotics (29 Mar – 21 Sep 2025)"></div>
         <div class="txt"><h3>Executive Programme in Robotics</h3><p>Indian Institute of Technology Delhi · Mar–Sep 2025</p></div></div>
@@ -685,6 +665,22 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
       <div class="cert"><div class="img" style="background:linear-gradient(160deg,#1c5d99,#0b1f2e)"><div class="badge" style="background:rgba(255,255,255,.12);width:80px;height:80px;font-size:24px">IISc</div></div>
         <div class="txt"><h3>Reinforcement Learning (3:0)</h3><p>Indian Institute of Science, CCE Proficience · May–Jul 2026 (Prof. Shalabh Bhatnagar)</p></div></div>
     </div>
+  </section>
+
+  <!-- CPD -->
+  <section id="cpd">
+    <div class="sec-head"><div class="row"><span class="num">09</span><h2>Professional development (UK-SPEC)</h2></div>
+      <p>Where to find evidence on this page for each of the five UK-SPEC competence areas.</p></div>
+    <table class="cpd">
+      <thead><tr><th scope="col">Competence area</th><th scope="col">Evidence on this page</th></tr></thead>
+      <tbody>
+        <tr><td>A · Knowledge and understanding</td><td><a href="#skills">Skills</a>; <a href="#certificates">courses and certificates</a> (IIT Delhi robotics, Modern Robotics, reinforcement learning); MSc Robotics at Manchester.</td></tr>
+        <tr><td>B · Design, development and problem solving</td><td><a href="#lab">SLAM lab</a> (robot built from parts, LiDAR ghost-points bug); <a href="#projects">Leo Rover vision tests</a>; factory-firmware automation tool.</td></tr>
+        <tr><td>C · Responsibility, management and leadership</td><td><a href="#samsung">Industry</a>: release coordination, test planning across five regions, mentoring 4 interns.</td></tr>
+        <tr><td>D · Communication and interpersonal skills</td><td><a href="#publications">Publications and talks</a>, including a talk in Doha; liaison between the Delhi team and Samsung HQ in Korea.</td></tr>
+        <tr><td>E · Professional commitment</td><td>IET student member; IEEE member; member of the University of Manchester Robotics Society; AI use stated openly (see footer).</td></tr>
+      </tbody>
+    </table>
   </section>
 
   <!-- CONTACT -->
@@ -708,7 +704,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
 <footer>
   <div class="wrap">
     <span>© 2026 Amit Nath Gupta · Manchester, UK</span>
-    <span>Photo, screenshots, video and certificates are my own. ICFBP paper © Future Business Perspectives (ICFBP 2025 proceedings), shared as author's copy. Project graphics drawn for this site. Built with help from AI tools and hosted on GitHub Pages.</span>
+    <span>Photos, screenshots and the screen recording are my own. Certificates were issued to me by the organisations shown. ICFBP paper © ICFBP 2025 proceedings, shared as the author's copy. Project graphics drawn for this site. TortoiseBot platform by RigBetel Labs. Fonts: Inter, Space Grotesk, JetBrains Mono (Google Fonts, SIL Open Font Licence). LinkedIn and GitHub logos are trademarks of their owners. Built with help from AI tools (Claude; reviewed with ChatGPT and Gemini) and hosted on GitHub Pages.</span>
   </div>
 </footer>
 
@@ -720,12 +716,18 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
   btn.addEventListener('click',function(){var o=menu.classList.toggle('open');btn.setAttribute('aria-expanded',o)});
   menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){menu.classList.remove('open');btn.setAttribute('aria-expanded','false')})});
   var lb=document.getElementById('lb'), lbImg=lb.querySelector('img'), lbCap=lb.querySelector('.lbcap');
+  var lbBtn=lb.querySelector('button'), lastFocus=null;
   document.querySelectorAll('.strip img,.shot img,.cert .img img,.pub .thumb').forEach(function(im){
-    im.addEventListener('click',function(){lbImg.src=im.src;lbImg.alt=im.alt;lbCap.textContent=im.getAttribute('data-cap')||im.alt;lb.classList.add('open')});
+    im.setAttribute('tabindex','0'); im.setAttribute('role','button');
+    im.setAttribute('aria-label','Enlarge image: '+(im.getAttribute('data-cap')||im.alt));
+    function open(){lastFocus=im;lbImg.src=im.src;lbImg.alt=im.alt;lbCap.textContent=im.getAttribute('data-cap')||im.alt;lb.classList.add('open');lbBtn.focus()}
+    im.addEventListener('click',open);
+    im.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();open()}});
   });
-  function close(){lb.classList.remove('open');lbImg.src=''}
+  function close(){lb.classList.remove('open');lbImg.src='';if(lastFocus){lastFocus.focus();lastFocus=null}}
   lb.addEventListener('click',close);
-  document.addEventListener('keydown',function(e){if(e.key==='Escape')close()});
+  lb.addEventListener('keydown',function(e){if(e.key==='Tab'){e.preventDefault();lbBtn.focus()}});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&lb.classList.contains('open'))close()});
 })();
 </script>
 </body>
